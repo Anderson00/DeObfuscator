@@ -1,6 +1,6 @@
 [submodule "extern/unicorn"]
-    path = extern/unicorn
-    url = https://github.com/unicorn-engine/unicorn.git
+	path = extern/unicorn
+	url = https://github.com/unicorn-engine/unicorn.git
 
 [submodule "extern/capstone"]
 	path = extern/capstone
