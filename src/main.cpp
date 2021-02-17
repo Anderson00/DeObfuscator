@@ -5,6 +5,9 @@
 #include <curses.h>
 #include <panel.h>
 
+#include "include/curses/CursesSingleton.h"
+#include "include/curses/window.h"
+
 #define DLL "codex.dll"
 #define ADDRESS 0x10000000
 #define STACK_ADDR 0x0
@@ -35,55 +38,20 @@ void capstone_printf(uint64_t address, byte * buffer, size_t size){
     cs_close(&handle);
 }
 
-WINDOW *create_newwin(int height, int width, int starty, int startx)
-{	
-    WINDOW *local_win;
-
-	local_win = newwin(height, width, starty, startx);
-	wborder(local_win, ACS_VLINE, ACS_VLINE, ACS_HLINE, ACS_HLINE, ACS_ULCORNER, ACS_URCORNER, ACS_LLCORNER, ACS_LRCORNER);
-	wrefresh(local_win);
-	return local_win;
-}
-
-void destroy_win(WINDOW *local_win)
-{	
-	wborder(local_win, ' ', ' ', ' ',' ',' ',' ',' ',' ');
-	wrefresh(local_win);
-	delwin(local_win);
-}
 
 int main(int argc, char **argv){
 
-    WINDOW *local_win, *local_win2, *local_win3;	
-	initscr();
-    noecho();
-    start_color();
-	init_pair(1, COLOR_RED, COLOR_WHITE);
-    init_pair(2, COLOR_WHITE, COLOR_BLUE);
-    wbkgd(stdscr, COLOR_PAIR(1));
-    refresh();
+    CursesSingleton * cursesInstance = CursesSingleton::instance();
     
-	local_win = create_newwin(LINES-6, COLS/2 - 2, 1, 1);
-    local_win2 = create_newwin(LINES-6, COLS/2 - 1, 1, COLS/2);
-    local_win3 = create_newwin(5, COLS-2, LINES-5, 1);
 
-    wbkgd(local_win, COLOR_PAIR(1));
+    Window* wnd = new Window(5, 5);
+    Window* wnd2 = new Window(5, 5, 1, 5);
+      
+    getch();
+    delete wnd;
+    delete wnd2;
+    delete cursesInstance;
 
-    wattron(local_win, COLOR_PAIR(1));
-    wmove(local_win, 1, 1);
-    wprintw(local_win, "Testando !");
-    wmove(local_win, 2, 1);
-    wprintw(local_win, "H=%d W=%d", LINES, COLS);
-    wmove(local_win3, 1, 1);
-    wprintw(local_win3, "has colors: %d %d", has_colors(), can_change_color());
-    wattroff(local_win, COLOR_PAIR(1));
-
-    wrefresh(local_win);
-    wrefresh(local_win3);
-	getch();
-	destroy_win(local_win);
-	refresh();
-	endwin();
 
     uc_err err = uc_open(UC_ARCH_X86, UC_MODE_32, &engine);
     if(err == UC_ERR_OK){
@@ -98,13 +66,15 @@ int main(int argc, char **argv){
             return err;
         }
 
+        
+
         std::ifstream file(DLL, std::ifstream::binary);
         if(file){
             file.seekg (0, file.end);
             int length = file.tellg();
             file.seekg (0, file.beg);
             std::cout << "File:" << DLL << ", Size: " << length << std::endl;
-            
+
             char * buffer = new char[length];
             file.read(buffer, length);
 
@@ -114,6 +84,7 @@ int main(int argc, char **argv){
                 std::cout << "error: only " << file.gcount() << " could be read" << std::endl;
                 return -1;
             }
+
 
             err = uc_mem_write(engine, ADDRESS, buffer, length);
             if(err != UC_ERR_OK){
@@ -165,6 +136,8 @@ int main(int argc, char **argv){
             delete[] dllEntry;
             delete[] bb;
             delete[] buffer;
+        }else{
+            std::cout << "File not Found" << std::endl;
         }
     }else{
         std::cout << "Error: " << uc_strerror(err) << std::endl;
