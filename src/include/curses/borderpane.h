@@ -31,16 +31,12 @@ public:
         }
     
     Window* top();
-    Window* top(Window * child);
 
     Window* center();
-    Window* center(Window * child);
 
     Window* left();
-    Window* left(Window * child);
 
     Window* right();
-    Window* right(Window * child);
 
 private:
 };

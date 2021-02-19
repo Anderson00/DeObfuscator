@@ -4,10 +4,6 @@ Window* BorderPane::top(){
     return (Window*)this->children()[0];
 }
 
-Window* BorderPane::top(Window * view){
-    return (Window*)this->children()[0];
-}
-
 Window* BorderPane::center(){
     return (Window*)this->children()[1];
 }
