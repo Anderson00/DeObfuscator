@@ -12,10 +12,16 @@ public:
     View* addChild(View * view);
     View* removeChild(View * view);
     View* removeChild(int index);
-    int childrenCount(){return this->children.size();}
+    std::vector<View*> children(){return this->children_val;}
+    int childrenCount(){return this->children_val.size();}
+    
+    void refresh() override;
 
 private:
-    std::vector<View*> children;
+    void normalizeChild(View* view);
+
+private:
+    std::vector<View*> children_val;
 };
 
 #endif

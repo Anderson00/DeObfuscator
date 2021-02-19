@@ -11,20 +11,123 @@ public:
         x_val(x), 
         y_val(y){ }
 
-    int& width(){return this->width_val;}
-    int& height(){return this->height_val;}
-    int& x(){return this->x_val;}
-    int& y(){return this->y_val;}
+    virtual void move(int x, int y) = 0;
+
+    int width(){return this->width_val;}
+    int width(int width){return this->width_val;}
+    int height(){return this->height_val;}
+    int height(int height){return this->height_val;}
+    int x(){return this->x_val;}
+    int x(int x){
+        //normalizeViewX(x);
+        this->x_val = x;
+        return this->x_val;
+    }
+    int y(){return this->y_val;}
+    int y(int y){
+        //normalizeViewY(y);
+        this->y_val = y;
+        return this->y_val;
+    }
+
+    View* parent(){return this->parent_val;}
+    View* parent(View * parent){
+        this->parent_val = parent;
+        normalizeViewInParent();
+        return this->parent_val;
+    }
 
     const int x() const {return x_val;}
-    const int y() const {return x_val;}
+    const int y() const {return y_val;}
     const int width() const {return this->width_val;}
     const int height() const {return this->height_val;}
 
     virtual void refresh() = 0;
+    virtual void clear() = 0;
+
+    bool operator ==(View *view){return view == this;}
+
+
+protected:
+    int& maxWidth(){return this->maxWidth_val;}
+    int& maxHeight(){return this->maxHeight_val;}
+    int& maxX(){return this->maxX_val;}
+    int& maxY(){return this->maxY_val;}
+
+    const int maxX() const {return maxX_val;}
+    const int maxY() const {return maxY_val;}
+    const int maxWidth() const {return this->maxWidth_val;}
+    const int maxHeight() const {return this->maxHeight_val;}
+
+private:
+    void normalizeViewInParent() {
+        if (this->parent_val != nullptr) {
+            //clear();
+            //this->x_val += this->parent_val->x_val;
+            //this->y_val += this->parent_val->y_val;
+            move(this->x_val, this->y_val);
+            std::cout << this->x_val << " " <<  this->y_val << std::endl;
+            
+            this->maxWidth_val = this->parent_val->maxWidth_val;
+            this->maxHeight_val = this->parent_val->height_val;
+
+        }
+
+        //TODO: caso nao tenha pai, ou o pai seja retirado, ent�o, resetar parametros conforme a stdscr.
+    }
+
+    void normalizeViewX(int x){
+        if(this->parent_val != nullptr){
+            if(this->x_val + this->parent_val->x_val == (x + this->parent_val->x_val))
+                return;
+            x = this->parent_val->x() + x;
+        }else{
+            if(x == this->x_val) return;
+
+        }
+
+        static int i = 0;
+        
+        if(i < 4)
+            std::cout  << "X: " << x << " | " << this->x_val << std::endl;
+        
+        i++;
+
+        this->x_val = x;
+        
+
+        //normalizeViewInParent();
+        move(this->x_val, this->y_val);
+    }
+
+    void normalizeViewY(int y){
+        if(this->parent_val != nullptr){
+            if(this->y_val + this->parent_val->y_val == (y + this->parent_val->y_val))
+                return;
+            y = this->parent_val->y() + y;            
+        }
+        if(y == this->y_val) return;
+
+        static int i = 0;
+        
+        if(i < 4)
+            std::cout << "Y: " << y << " | " << this->y_val << std::endl;
+        
+        i++;
+
+        this->y_val = y;
+        //normalizeViewInParent();
+        clear();
+        move(this->x_val, this->y_val);
+    }
+
 private:
     int width_val,  height_val;
+    int maxWidth_val,  maxHeight_val;
     int x_val, y_val;
+    int maxX_val, maxY_val;
+
+    View * parent_val = nullptr;
 };
 
 #endif

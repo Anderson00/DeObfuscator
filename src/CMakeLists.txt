@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.1)
 
-set(SOURCE_FILES_CURSES include/curses/window.cpp include/curses/viewgroup.cpp)
+set(SOURCE_FILES_CURSES include/curses/window.cpp include/curses/viewgroup.cpp include/curses/borderpane.cpp)
 
 add_executable(Main main.cpp ${SOURCE_FILES_CURSES})
 
