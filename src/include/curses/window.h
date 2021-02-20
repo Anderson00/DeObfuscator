@@ -56,7 +56,6 @@ public:
         wrefresh(this->win);
     }
 
-protected:
     WINDOW * winInstance(){return this->win;}
 
 private:

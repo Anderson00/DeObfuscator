@@ -9,6 +9,7 @@
 #include "include/curses/window.h"
 #include "include/curses/text.h"
 #include "include/curses/borderpane.h"
+#include "include/curses/scrollpane.h"
 
 void capstone_printf(uint64_t address, byte *buffer, size_t size)
 {
@@ -41,39 +42,16 @@ int main(int argc, char **argv)
     CursesSingleton *cursesInstance = CursesSingleton::instance();
     noecho();
     cbreak();
-    //nodelay(stdscr, true);
-    //halfdelay(500);
 
-    Window *wnd = new Window(20, 10, 10, 5);
-    Window *wnd2 = new Window(12, 5, 1, 1);
-    //wprintw(stdscr, "%d %d", COLS, LINES);
-    BorderPane * pane = new BorderPane(COLS, LINES, 0, 0);
-    //pane->refresh();
-    //wnd->visible(true);
-    //wnd->print(std::string("testando 34").c_str());
-    //txt->visible(true);
+    
+    BorderPane *pane = new BorderPane(COLS, LINES, 0, 0);
+
 
     refresh();
+
     getch();
-
-    // while (wgetch(stdscr) != 'q') {
-    //     int x = 0;
-    //     int y = 0;
-    //     getmaxyx(stdscr, y, x);
-
-    //     if (is_termresized()) {
-    //         resize_term(0, 0);
-    //         wclear(stdscr);
-    //         wnd->clear();
-    //     }
-    //     printw("x=%d, y=%d %d", x, y);
-    //     wmove(stdscr, 0, 0);
-
-    //     refresh();
-    //     wnd->refresh();
-    // }
-
-    delete wnd;
+    
+    delete pane;
     delete cursesInstance;
 
     return 0;

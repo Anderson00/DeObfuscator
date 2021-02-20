@@ -13,9 +13,9 @@ public:
             
 
             this->addChild(new Window(width-2, 4, 1 , 1));//Top
-            this->addChild(new Window(((width-2)-width*0.2) - width*0.2, height - 6, width*0.2 + 1, 5));//Center
+            this->addChild(new Window(((width-1)-width*0.2) - width*0.2, height - 6, width*0.2 + 1, 5));//Center
             this->addChild(new Window(width*0.2, height - 6, 1 , 5));//Left
-            this->addChild(new Window(width*0.2, height - 6, ((width-2)-width*0.2) + 1, 5));//Right
+            this->addChild(new Window(width*0.2, height - 6, ((width-2)-width*0.2) + 2, 5));//Right
             this->top()->visible(true);
             this->center()->visible(true);
             this->left()->visible(true);

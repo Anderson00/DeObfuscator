@@ -33,7 +33,8 @@ public:
     View* parent(){return this->parent_val;}
     View* parent(View * parent){
         this->parent_val = parent;
-        normalizeViewInParent();
+        this->move(this->x_val, this->y_val);
+        //normalizeViewInParent();
         return this->parent_val;
     }
 

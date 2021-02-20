@@ -12,17 +12,16 @@ void Window::initialize(){
 void Window::move(int x, int y){
     this->clear();
     if(this->parent() != nullptr){
-        this->x(x + this->parent()->x());
-        this->y(y + this->parent()->y());
+        x = x + this->parent()->x();
+
+        y = y + this->parent()->y();
     }
-    else{
         this->x(x);
         this->y(y);
-    }
+    
     
 
-    std::cout << "Window::Move: " << this->x() << " | " << this->y() << std::endl; 
-    mvwin(this->win, this->y(), this->x());
+    std::cout << "Window::Move: " << x << " | " << y << std::endl; 
+    mvwin(this->win, y, x);
     ViewGroup::refresh();
-    this->refresh();    
 }

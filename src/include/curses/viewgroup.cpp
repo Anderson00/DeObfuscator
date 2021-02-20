@@ -1,10 +1,11 @@
 #include "viewgroup.h"
 
+#include <math.h>
+
 View* ViewGroup::addChild(View * view){
     this->children_val.push_back(view);
     view->parent(this);
-    view->refresh();
-    this->refresh();
+    ViewGroup::refresh();
     return view;
 }
 
@@ -24,8 +25,8 @@ View* ViewGroup::removeChild(int index){
 
 void ViewGroup::refresh(){
     for(auto it = this->children_val.begin(); it != this->children_val.end(); ++it){
-        (*it)->clear();
-        //(*it)->move(1,1);
+        //(*it)->clear();
+        (*it)->move(abs((*it)->x() - (*it)->parent()->x()), abs((*it)->y() - (*it)->parent()->y()));
         (*it)->refresh();        
         
     }
