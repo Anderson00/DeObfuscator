@@ -24,10 +24,27 @@ View* ViewGroup::removeChild(int index){
 }
 
 void ViewGroup::refresh(){
+    std::cout << "Cildren count: " << this->children_val.size() << std::endl;
     for(auto it = this->children_val.begin(); it != this->children_val.end(); ++it){
         //(*it)->clear();
-        (*it)->move(abs((*it)->x() - (*it)->parent()->x()), abs((*it)->y() - (*it)->parent()->y()));
+        //(*it)->move(abs((*it)->x() - (*it)->parent()->x()), abs((*it)->y() - (*it)->parent()->y()));
+        (*it)->move((*it)->x(), (*it)->y());
         (*it)->refresh();        
         
+    }
+}
+
+void ViewGroup::move(int x, int y){
+    std::cout << "Cildren Move: " << this->children_val.size() << std::endl;
+    for(auto it = this->children_val.begin(); it != this->children_val.end(); ++it){
+        //(*it)->move(abs((*it)->x() - (*it)->parent()->x()), abs((*it)->y() - (*it)->parent()->y()));
+        (*it)->move((*it)->x(), (*it)->y());     
+        (*it)->refresh();  
+    }
+}
+
+void ViewGroup::clear(){
+    for(auto it = this->children_val.begin(); it != this->children_val.end(); ++it){
+        (*it)->clear();
     }
 }

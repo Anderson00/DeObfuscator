@@ -11,11 +11,17 @@ void Window::initialize(){
 
 void Window::move(int x, int y){
     this->clear();
+    ViewGroup::move(x, y);
+    ViewGroup::refresh();
     if(this->parent() != nullptr){
+
         x = x + this->parent()->x();
 
         y = y + this->parent()->y();
+        if(this->x() == x && this->y() == y)
+            return;
     }
+    
         this->x(x);
         this->y(y);
     
@@ -23,5 +29,5 @@ void Window::move(int x, int y){
 
     std::cout << "Window::Move: " << x << " | " << y << std::endl; 
     mvwin(this->win, y, x);
-    ViewGroup::refresh();
+    this->refresh();
 }

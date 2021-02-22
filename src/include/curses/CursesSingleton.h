@@ -26,6 +26,7 @@ private:
     CursesSingleton(){
         this->scrwin = initscr();        
         start_color();
+        init_pair(1, COLOR_RED, COLOR_BLACK);
         has_colors();
         can_change_color();
         refresh();

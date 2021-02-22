@@ -16,6 +16,8 @@ public:
     int childrenCount(){return this->children_val.size();}
     
     void refresh() override;
+    virtual void move(int x, int y) override;
+    void clear() override;
 
 private:
     void normalizeChild(View* view);

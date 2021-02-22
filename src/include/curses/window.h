@@ -47,7 +47,7 @@ public:
     void clear() override{
         wborder(win, ' ', ' ', ' ',' ',' ',' ',' ',' ');
 	    wrefresh(win);
-        //refresh();
+        ViewGroup::refresh();
     }
 
     void print(const char *str){

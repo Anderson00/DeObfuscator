@@ -33,7 +33,9 @@ public:
     View* parent(){return this->parent_val;}
     View* parent(View * parent){
         this->parent_val = parent;
+        this->clear();
         this->move(this->x_val, this->y_val);
+        this->parent()->refresh();
         //normalizeViewInParent();
         return this->parent_val;
     }
@@ -59,68 +61,6 @@ protected:
     const int maxY() const {return maxY_val;}
     const int maxWidth() const {return this->maxWidth_val;}
     const int maxHeight() const {return this->maxHeight_val;}
-
-private:
-    void normalizeViewInParent() {
-        if (this->parent_val != nullptr) {
-            //clear();
-            //this->x_val += this->parent_val->x_val;
-            //this->y_val += this->parent_val->y_val;
-            move(this->x_val, this->y_val);
-            std::cout << this->x_val << " " <<  this->y_val << std::endl;
-            
-            this->maxWidth_val = this->parent_val->maxWidth_val;
-            this->maxHeight_val = this->parent_val->height_val;
-
-        }
-
-        //TODO: caso nao tenha pai, ou o pai seja retirado, ent�o, resetar parametros conforme a stdscr.
-    }
-
-    void normalizeViewX(int x){
-        if(this->parent_val != nullptr){
-            if(this->x_val + this->parent_val->x_val == (x + this->parent_val->x_val))
-                return;
-            x = this->parent_val->x() + x;
-        }else{
-            if(x == this->x_val) return;
-
-        }
-
-        static int i = 0;
-        
-        if(i < 4)
-            std::cout  << "X: " << x << " | " << this->x_val << std::endl;
-        
-        i++;
-
-        this->x_val = x;
-        
-
-        //normalizeViewInParent();
-        move(this->x_val, this->y_val);
-    }
-
-    void normalizeViewY(int y){
-        if(this->parent_val != nullptr){
-            if(this->y_val + this->parent_val->y_val == (y + this->parent_val->y_val))
-                return;
-            y = this->parent_val->y() + y;            
-        }
-        if(y == this->y_val) return;
-
-        static int i = 0;
-        
-        if(i < 4)
-            std::cout << "Y: " << y << " | " << this->y_val << std::endl;
-        
-        i++;
-
-        this->y_val = y;
-        //normalizeViewInParent();
-        clear();
-        move(this->x_val, this->y_val);
-    }
 
 private:
     int width_val,  height_val;

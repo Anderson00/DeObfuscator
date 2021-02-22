@@ -1,14 +1,34 @@
-cmake_minimum_required(VERSION 3.1)
+cmake_minimum_required(VERSION 3.5)
 
-set(SOURCE_FILES_CURSES include/curses/window.cpp include/curses/viewgroup.cpp include/curses/borderpane.cpp)
+set(PROJECT_SOURCES
+    main.cpp
+    include/mainwindow.cpp
+    include/mainwindow.ui)
 
-add_executable(Main main.cpp ${SOURCE_FILES_CURSES})
+if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
+    qt_add_executable(Main
+        ${PROJECT_SOURCES}
+    )
+else()
+    if(ANDROID)
+        add_library(Main SHARED
+            ${PROJECT_SOURCES}
+        )
+    else()
+        add_executable(Main
+            ${PROJECT_SOURCES}
+        )
+    endif()
+endif()
 
-target_link_libraries (Main PUBLIC cxxopts unicorn capstone-shared "${PROJECT_SOURCE_DIR}/lib/pdcurses.lib")
+target_link_libraries(Main PRIVATE Qt${QT_VERSION_MAJOR}::Widgets cxxopts unicorn capstone-shared)
+
+#add_executable(Main main.cpp ${SOURCE_FILES_CURSES})
+
+#target_link_libraries (Main PUBLIC cxxopts unicorn capstone-shared "${PROJECT_SOURCE_DIR}/lib/pdcurses.lib")
 target_include_directories(Main PUBLIC
                           "${PROJECT_BINARY_DIR}"
                           "${PROJECT_SOURCE_DIR}/extern/unicorn/include"
                           "${PROJECT_SOURCE_DIR}/extern/capstone/include"
-                          "include/curses"
-                          "${PROJECT_SOURCE_DIR}/extern/PDCurses/"                          
+                          "include/"
                           )
