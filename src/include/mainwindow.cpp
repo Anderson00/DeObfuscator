@@ -1,6 +1,8 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
 
+#include "programheader.h"
+
 #include <QLabel>
 
 MainWindow::MainWindow(QWidget *parent)
@@ -9,6 +11,9 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
+    ui->mdiArea->tileSubWindows();
+    ui->mdiArea->addSubWindow(new ProgramHeader(this));
+    ui->mdiArea->addSubWindow(new ProgramHeader(this));
 }
 
 MainWindow::~MainWindow()

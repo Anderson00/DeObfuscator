@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ProgramHeader</class>
+ <widget class="QMainWindow" name="ProgramHeader">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>698</width>
+    <height>379</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QSplitter" name="splitter_2">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <widget class="QTreeWidget" name="treeWidget">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <column>
+        <property name="text">
+         <string>Program Header</string>
+        </property>
+       </column>
+       <item>
+        <property name="text">
+         <string>MZ Header</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>PE Header</string>
+        </property>
+       </item>
+      </widget>
+      <widget class="QSplitter" name="splitter">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <widget class="QTableWidget" name="tableWidget_2">
+        <row>
+         <property name="text">
+          <string>00001</string>
+         </property>
+        </row>
+        <row>
+         <property name="text">
+          <string>00002</string>
+         </property>
+        </row>
+        <column>
+         <property name="text">
+          <string>hex</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>hex2</string>
+         </property>
+        </column>
+        <item row="0" column="0">
+         <property name="text">
+          <string>FF</string>
+         </property>
+        </item>
+        <item row="0" column="1">
+         <property name="text">
+          <string>43</string>
+         </property>
+        </item>
+        <item row="1" column="0">
+         <property name="text">
+          <string>00</string>
+         </property>
+        </item>
+        <item row="1" column="1">
+         <property name="text">
+          <string>F3</string>
+         </property>
+        </item>
+       </widget>
+       <widget class="QTableWidget" name="tableWidget">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>2</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <column>
+         <property name="text">
+          <string>Field</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Value</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Desc</string>
+         </property>
+        </column>
+       </widget>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

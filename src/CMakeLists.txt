@@ -3,7 +3,9 @@ cmake_minimum_required(VERSION 3.5)
 set(PROJECT_SOURCES
     main.cpp
     include/mainwindow.cpp
-    include/mainwindow.ui)
+    include/mainwindow.ui
+    include/programheader.cpp
+    include/programheader.ui)
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(Main
@@ -30,5 +32,6 @@ target_include_directories(Main PUBLIC
                           "${PROJECT_BINARY_DIR}"
                           "${PROJECT_SOURCE_DIR}/extern/unicorn/include"
                           "${PROJECT_SOURCE_DIR}/extern/capstone/include"
+                          "${PROJECT_SOURCE_DIR}/extern/retdec/include"
                           "include/"
                           )
