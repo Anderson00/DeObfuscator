@@ -1,7 +1,11 @@
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.8)
 
 set(PROJECT_SOURCES
     main.cpp
+    include/utils.h
+    include/utils.cpp
+    include/programfieldsmodel.h
+    include/programfieldsmodel.cpp
     include/mainwindow.cpp
     include/mainwindow.ui
     include/programheader.cpp
@@ -23,7 +27,7 @@ else()
     endif()
 endif()
 
-target_link_libraries(Main PRIVATE Qt${QT_VERSION_MAJOR}::Widgets cxxopts unicorn capstone-shared)
+target_link_libraries(Main PRIVATE Qt${QT_VERSION_MAJOR}::Widgets cxxopts unicorn retdec)
 
 #add_executable(Main main.cpp ${SOURCE_FILES_CURSES})
 
@@ -31,7 +35,7 @@ target_link_libraries(Main PRIVATE Qt${QT_VERSION_MAJOR}::Widgets cxxopts unicor
 target_include_directories(Main PUBLIC
                           "${PROJECT_BINARY_DIR}"
                           "${PROJECT_SOURCE_DIR}/extern/unicorn/include"
-                          "${PROJECT_SOURCE_DIR}/extern/capstone/include"
+                          #"${PROJECT_SOURCE_DIR}/extern/capstone/include"
                           "${PROJECT_SOURCE_DIR}/extern/retdec/include"
                           "include/"
                           )

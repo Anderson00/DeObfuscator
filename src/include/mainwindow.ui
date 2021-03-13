@@ -99,23 +99,16 @@
        </spacer>
       </item>
       <item>
-       <widget class="QLabel" name="label">
-        <property name="text">
-         <string>Arquivo:</string>
-        </property>
-       </widget>
-      </item>
-      <item>
        <widget class="QLabel" name="label_3">
         <property name="text">
-         <string>Arquivo.exe</string>
+         <string>&lt;File&gt;</string>
         </property>
        </widget>
       </item>
       <item>
        <widget class="QLabel" name="label_4">
         <property name="text">
-         <string>6124 KB</string>
+         <string>&lt;Size&gt;</string>
         </property>
        </widget>
       </item>
@@ -221,6 +214,8 @@
     <property name="title">
      <string>Help</string>
     </property>
+    <addaction name="actiondocumentation"/>
+    <addaction name="actionAbout"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuEdit"/>
@@ -236,7 +231,6 @@
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
-   <addaction name="actionOpen"/>
   </widget>
   <action name="actionOpen">
    <property name="text">
@@ -270,6 +264,16 @@
   <action name="actionPreferences">
    <property name="text">
     <string>Preferences</string>
+   </property>
+  </action>
+  <action name="actiondocumentation">
+   <property name="text">
+    <string>documentation</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="text">
+    <string>About</string>
    </property>
   </action>
  </widget>

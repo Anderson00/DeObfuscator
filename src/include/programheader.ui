@@ -14,15 +14,33 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
      <widget class="QSplitter" name="splitter_2">
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Plain</enum>
+      </property>
+      <property name="lineWidth">
+       <number>1</number>
+      </property>
+      <property name="midLineWidth">
+       <number>0</number>
+      </property>
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
       </property>
+      <property name="handleWidth">
+       <number>4</number>
+      </property>
       <widget class="QTreeWidget" name="treeWidget">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
+        <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -36,18 +54,34 @@
         <property name="text">
          <string>MZ Header</string>
         </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>PE Header</string>
-        </property>
+        <item>
+         <property name="text">
+          <string>PE Header</string>
+         </property>
+         <item>
+          <property name="text">
+           <string>File Header</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Optional Header</string>
+          </property>
+         </item>
+        </item>
        </item>
       </widget>
       <widget class="QSplitter" name="splitter">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+         <horstretch>1</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
        <property name="orientation">
         <enum>Qt::Vertical</enum>
        </property>
-       <widget class="QTableWidget" name="tableWidget_2">
+       <widget class="QTableWidget" name="hexTable">
         <row>
          <property name="text">
           <string>00001</string>
@@ -89,13 +123,19 @@
          </property>
         </item>
        </widget>
-       <widget class="QTableWidget" name="tableWidget">
+       <widget class="QTableWidget" name="fieldsTable">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
           <horstretch>2</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
+        <attribute name="horizontalHeaderCascadingSectionResizes">
+         <bool>false</bool>
+        </attribute>
+        <attribute name="horizontalHeaderStretchLastSection">
+         <bool>true</bool>
+        </attribute>
         <column>
          <property name="text">
           <string>Field</string>

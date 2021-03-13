@@ -2,8 +2,10 @@
 #include "./ui_mainwindow.h"
 
 #include "programheader.h"
-
+#include <QDebug>
 #include <QLabel>
+#include <sstream>
+#include <iomanip>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -12,8 +14,11 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
 
     ui->mdiArea->tileSubWindows();
-    ui->mdiArea->addSubWindow(new ProgramHeader(this));
-    ui->mdiArea->addSubWindow(new ProgramHeader(this));
+    ProgramHeader *pHeader = new ProgramHeader(this);
+    ui->mdiArea->addSubWindow(pHeader);
+
+    //QObject::connect(this, SIGNAL(fileChoosed(retdec::fileformat::FileFormat*)), pHeader, SLOT(on_fileChoosed(retdec::fileformat::FileFormat*)));
+    QObject::connect(this, &MainWindow::fileChoosed, pHeader, &ProgramHeader::on_fileIsChoosed);
 }
 
 MainWindow::~MainWindow()
@@ -33,9 +38,10 @@ void MainWindow::on_actionOpen_triggered()
 
     QFile file(fileUrl.toLocalFile());
 
-    qDebug() << file.size();
-    qDebug() <<"Testando" << file.exists();
-
-    this->ui->label->setText(fileUrl.fileName().append(" ").append("size: ").append(std::to_string(file.size()/1024).c_str()).append("KB"));
+    this->file = retdec::fileformat::createFileFormat(fileUrl.toLocalFile().toStdString());
+    emit fileChoosed(this->file.get());
+    std::string header;
+    this->file->getHexBytes(header, 0x00, 2);
+    qDebug() << QString::fromStdString(header);
 
 }

@@ -5,6 +5,8 @@
 #include <QDialog>
 #include <QFileDialog>
 
+#include <retdec/fileformat/format_factory.h>
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -17,6 +19,9 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+signals:
+    void fileChoosed(retdec::fileformat::FileFormat* file);
+
 private slots:
     void on_actionExit_triggered();
 
@@ -24,5 +29,7 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+    std::unique_ptr<retdec::fileformat::FileFormat> file;
+
 };
 #endif // MAINWINDOW_H
