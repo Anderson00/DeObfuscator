@@ -35,13 +35,19 @@ void MainWindow::on_actionExit_triggered()
 void MainWindow::on_actionOpen_triggered()
 {
     QUrl fileUrl = QFileDialog::getOpenFileUrl(this, tr("File"), tr(""),"Supported files (*.exe *.dll)");
+    if(fileUrl.isValid()){
+        QFile file(fileUrl.toLocalFile());
+        QFileInfo info(file);
 
-    QFile file(fileUrl.toLocalFile());
+        this->file = retdec::fileformat::createFileFormat(fileUrl.toLocalFile().toStdString());
 
-    this->file = retdec::fileformat::createFileFormat(fileUrl.toLocalFile().toStdString());
-    emit fileChoosed(this->file.get());
-    std::string header;
-    this->file->getHexBytes(header, 0x00, 2);
-    qDebug() << QString::fromStdString(header);
+        this->ui->fileName->setText(info.completeBaseName()+'.'+info.completeSuffix());
+        this->ui->fileSize->setText(QString::number(file.size() / 1024)+" KB");
+
+        emit fileChoosed(this->file.get());
+        std::string header;
+        this->file->getHexBytes(header, 0x00, 2);
+        qDebug() << QString::fromStdString(header);
+    }
 
 }

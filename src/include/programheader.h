@@ -29,8 +29,11 @@ private slots:
 private:
     void onMzHeaderItemClicked(QTreeWidgetItem *item, int column);
     void onPeHeaderItemClicked(QTreeWidgetItem *item, int column);
+    void onFileHeaderItemClicked(QTreeWidgetItem *item, int column);
+    void onOptionalHeaderItemClicked(QTreeWidgetItem *item, int column);
 
-    void insertProgramFieldsModelListinFieldsRow(const QList<ProgramFieldsModel>& list);
+    void insertProgramFieldsModelListinFieldsRow(const QList<ProgramFieldsModel>& list, size_t baseAddress);
+    void hexTableShowMemory(size_t baseAddress, size_t size, int bytesPerRow = 4);
 
 private:
     Ui::ProgramHeader *ui;

@@ -14,6 +14,9 @@ namespace MyUtils {
     const QList<ProgramFieldsModel> &getFileHeaderFieldsList(retdec::fileformat::Architecture arch);
     const QList<ProgramFieldsModel> &getOptionalHeaderFieldsList(retdec::fileformat::Architecture arch);
 
+    QString convertToHex(size_t value, int w);
+    size_t getNtHeaderSize(retdec::fileformat::Architecture arch);
+
 };
 
 #endif // UTILS_H

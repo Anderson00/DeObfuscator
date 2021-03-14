@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file>file-document-edit-outline.svg</file>
+        <file>content-save-edit-outline.svg</file>
+        <file>content-save-cog-outline.svg</file>
+    </qresource>
+</RCC>

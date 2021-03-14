@@ -1,5 +1,10 @@
 #include "utils.h"
 
+#include <iomanip>
+#include <sstream>
+
+#include "retdec/pelib/PeLibInc.h"
+
 const QList<ProgramFieldsModel> &MyUtils::getDosFieldsList(retdec::fileformat::Architecture arch)
 {
     if(arch == retdec::fileformat::Architecture::X86){
@@ -105,4 +110,27 @@ const QList<ProgramFieldsModel> &MyUtils::getOptionalHeaderFieldsList(retdec::fi
         //No Architecture supported
         assert(false);
     }
+}
+
+QString MyUtils::convertToHex(size_t value, int w = 2)
+{
+    std::stringstream stream;
+    stream << "0x" << std::setfill('0') << std::setw(w) << std::uppercase << std::hex << value;
+
+    return QString::fromStdString(stream.str());
+}
+
+size_t MyUtils::getNtHeaderSize(retdec::fileformat::Architecture arch)
+{
+    if(arch == retdec::fileformat::Architecture::UNKNOWN){
+        assert(false);
+    }
+
+    static size_t sizeOfPeHeader = 4 + sizeof(PeLib::PELIB_IMAGE_FILE_HEADER)
+            + ((arch == retdec::fileformat::Architecture::X86) ?
+                  sizeof(PeLib::PELIB_IMAGE_OPTIONAL_HEADER32)://true
+                  sizeof(PeLib::PELIB_IMAGE_OPTIONAL_HEADER64) //false
+              );
+
+    return sizeOfPeHeader;
 }

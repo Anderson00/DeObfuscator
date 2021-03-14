@@ -82,46 +82,30 @@
         <enum>Qt::Vertical</enum>
        </property>
        <widget class="QTableWidget" name="hexTable">
-        <row>
-         <property name="text">
-          <string>00001</string>
-         </property>
-        </row>
-        <row>
-         <property name="text">
-          <string>00002</string>
-         </property>
-        </row>
-        <column>
-         <property name="text">
-          <string>hex</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>hex2</string>
-         </property>
-        </column>
-        <item row="0" column="0">
-         <property name="text">
-          <string>FF</string>
-         </property>
-        </item>
-        <item row="0" column="1">
-         <property name="text">
-          <string>43</string>
-         </property>
-        </item>
-        <item row="1" column="0">
-         <property name="text">
-          <string>00</string>
-         </property>
-        </item>
-        <item row="1" column="1">
-         <property name="text">
-          <string>F3</string>
-         </property>
-        </item>
+        <property name="alternatingRowColors">
+         <bool>false</bool>
+        </property>
+        <property name="selectionMode">
+         <enum>QAbstractItemView::SingleSelection</enum>
+        </property>
+        <property name="selectionBehavior">
+         <enum>QAbstractItemView::SelectRows</enum>
+        </property>
+        <property name="showGrid">
+         <bool>true</bool>
+        </property>
+        <property name="gridStyle">
+         <enum>Qt::SolidLine</enum>
+        </property>
+        <property name="cornerButtonEnabled">
+         <bool>false</bool>
+        </property>
+        <attribute name="horizontalHeaderStretchLastSection">
+         <bool>false</bool>
+        </attribute>
+        <attribute name="verticalHeaderStretchLastSection">
+         <bool>false</bool>
+        </attribute>
        </widget>
        <widget class="QTableWidget" name="fieldsTable">
         <property name="sizePolicy">
@@ -129,6 +113,9 @@
           <horstretch>2</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
+        </property>
+        <property name="alternatingRowColors">
+         <bool>true</bool>
         </property>
         <attribute name="horizontalHeaderCascadingSectionResizes">
          <bool>false</bool>

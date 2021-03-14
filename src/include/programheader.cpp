@@ -5,6 +5,7 @@
 
 #include "programfieldsmodel.h"
 #include "utils.h"
+#include "retdec/pelib/PeLibInc.h"
 
 
 ProgramHeader::ProgramHeader(QWidget *parent) :
@@ -34,6 +35,8 @@ void ProgramHeader::on_treeWidget_itemClicked(QTreeWidgetItem *item, int column)
         onMzHeaderItemClicked(item, column);
     }else if(itemClicked == "PE Header"){
         onPeHeaderItemClicked(item, column);
+    }else if(itemClicked == "File Header"){
+        onFileHeaderItemClicked(item, column);
     }
 }
 
@@ -43,18 +46,30 @@ void ProgramHeader::onMzHeaderItemClicked(QTreeWidgetItem *item, int column)
         return;
 
     this->currentItem = "MZ Header";
-    this->insertProgramFieldsModelListinFieldsRow(MyUtils::getDosFieldsList(file->getTargetArchitecture()));
+    this->insertProgramFieldsModelListinFieldsRow(MyUtils::getDosFieldsList(file->getTargetArchitecture()), 0);
+    this->hexTableShowMemory(0, 0x3c, 6);
 }
 
 void ProgramHeader::onPeHeaderItemClicked(QTreeWidgetItem *item, int column)
 {
     if(this->currentItem == "PE Header")
         return;
-    this->currentItem = "PE Header";;
-    this->insertProgramFieldsModelListinFieldsRow(MyUtils::getPEHeaderFieldsList(this->file->getTargetArchitecture()));
+    this->currentItem = "PE Header";
+    this->insertProgramFieldsModelListinFieldsRow(MyUtils::getPEHeaderFieldsList(this->file->getTargetArchitecture()), 0xF8);
+
+    this->hexTableShowMemory(0xF8, MyUtils::getNtHeaderSize(this->file->getTargetArchitecture()));
 }
 
-void ProgramHeader::insertProgramFieldsModelListinFieldsRow(const QList<ProgramFieldsModel> &list)
+void ProgramHeader::onFileHeaderItemClicked(QTreeWidgetItem *item, int column)
+{
+    if(this->currentItem == "File Header")
+        return;
+    this->currentItem = "File Header";;
+    this->insertProgramFieldsModelListinFieldsRow(MyUtils::getFileHeaderFieldsList(this->file->getTargetArchitecture()), 0xF8 + 0x04);
+    this->hexTableShowMemory(0xF8+4, MyUtils::getNtHeaderSize(this->file->getTargetArchitecture()));
+}
+
+void ProgramHeader::insertProgramFieldsModelListinFieldsRow(const QList<ProgramFieldsModel> &list, size_t baseAddress)
 {
     this->currentFields = &list;
     this->ui->fieldsTable->clear();
@@ -66,7 +81,7 @@ void ProgramHeader::insertProgramFieldsModelListinFieldsRow(const QList<ProgramF
     for(ProgramFieldsModel fields : list){
 
         std::string result;
-        this->file->getHexBytes(result, fields.getOffset(), fields.getSizeBytes());
+        this->file->getHexBytes(result, baseAddress+fields.getOffset(), fields.getSizeBytes());
         fields.setValue(QString::fromStdString(result));
 
         this->ui->fieldsTable->setItem(i, 0, new QTableWidgetItem(fields.getField()));
@@ -76,4 +91,30 @@ void ProgramHeader::insertProgramFieldsModelListinFieldsRow(const QList<ProgramF
         this->ui->fieldsTable->setVerticalHeaderItem(i, new QTableWidgetItem(fields.getHexOffset()));
         i++;
     }
+}
+
+void ProgramHeader::hexTableShowMemory(size_t baseAddress, size_t size, int bytesPerRow)
+{
+    this->ui->hexTable->clear();
+    this->ui->hexTable->setRowCount((size/bytesPerRow) + 1);
+    this->ui->hexTable->setColumnCount(bytesPerRow);
+
+    size_t endAddress = baseAddress + size;
+
+    for(size_t i = 0, newBaseAddress = baseAddress; newBaseAddress <= endAddress ;i++, newBaseAddress = baseAddress+i*bytesPerRow){
+
+
+        for(int j = 0; j < bytesPerRow; j++){
+            std::string result;
+            this->file->getHexBytes(result, newBaseAddress+j, 1);
+            QTableWidgetItem *item = new QTableWidgetItem(QString::fromStdString(result));
+            item->setTextAlignment(Qt::AlignmentFlag::AlignCenter);
+            this->ui->hexTable->setItem(i, j, item);
+        }
+
+        this->ui->hexTable->setVerticalHeaderItem(i, new QTableWidgetItem(MyUtils::convertToHex(newBaseAddress, 4)));
+    }
+
+    this->ui->hexTable->resizeColumnsToContents();
+    this->ui->hexTable->horizontalHeader()->setVisible(false);
 }
