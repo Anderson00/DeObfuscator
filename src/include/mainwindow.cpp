@@ -2,6 +2,7 @@
 #include "./ui_mainwindow.h"
 
 #include "programheader.h"
+#include <QMessageBox>
 #include <QDebug>
 #include <QLabel>
 #include <sstream>
@@ -44,10 +45,11 @@ void MainWindow::on_actionOpen_triggered()
         this->ui->fileName->setText(info.completeBaseName()+'.'+info.completeSuffix());
         this->ui->fileSize->setText(QString::number(file.size() / 1024)+" KB");
 
-        emit fileChoosed(this->file.get());
-        std::string header;
-        this->file->getHexBytes(header, 0x00, 2);
-        qDebug() << QString::fromStdString(header);
+        if(this->file->isUnknownArch() || !this->file->isInValidState()){
+            QMessageBox::warning(this, "File error", "File is invalid for some reason");
+        }else{
+            emit fileChoosed(this->file.get());
+        }
     }
 
 }

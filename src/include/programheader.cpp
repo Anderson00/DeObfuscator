@@ -55,18 +55,25 @@ void ProgramHeader::onPeHeaderItemClicked(QTreeWidgetItem *item, int column)
     if(this->currentItem == "PE Header")
         return;
     this->currentItem = "PE Header";
-    this->insertProgramFieldsModelListinFieldsRow(MyUtils::getPEHeaderFieldsList(this->file->getTargetArchitecture()), 0xF8);
 
-    this->hexTableShowMemory(0xF8, MyUtils::getNtHeaderSize(this->file->getTargetArchitecture()));
+    std::uint64_t res = 0;
+    this->file->get4ByteOffset(0x3c, res);
+
+    this->insertProgramFieldsModelListinFieldsRow(MyUtils::getPEHeaderFieldsList(this->file->getTargetArchitecture()), res);
+    this->hexTableShowMemory(res, MyUtils::getNtHeaderSize(this->file->getTargetArchitecture()));
 }
 
 void ProgramHeader::onFileHeaderItemClicked(QTreeWidgetItem *item, int column)
 {
     if(this->currentItem == "File Header")
         return;
-    this->currentItem = "File Header";;
-    this->insertProgramFieldsModelListinFieldsRow(MyUtils::getFileHeaderFieldsList(this->file->getTargetArchitecture()), 0xF8 + 0x04);
-    this->hexTableShowMemory(0xF8+4, MyUtils::getNtHeaderSize(this->file->getTargetArchitecture()));
+    this->currentItem = "File Header";
+
+    std::uint64_t res = 0;
+    this->file->get4ByteOffset(0x3c, res);
+
+    this->insertProgramFieldsModelListinFieldsRow(MyUtils::getFileHeaderFieldsList(this->file->getTargetArchitecture()), res + 0x04);
+    this->hexTableShowMemory(res + 0x04, MyUtils::getNtHeaderSize(this->file->getTargetArchitecture()));
 }
 
 void ProgramHeader::insertProgramFieldsModelListinFieldsRow(const QList<ProgramFieldsModel> &list, size_t baseAddress)
