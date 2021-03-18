@@ -2,6 +2,7 @@
 #include "./ui_mainwindow.h"
 
 #include "programheader.h"
+#include "utils.h"
 #include <QMessageBox>
 #include <QDebug>
 #include <QLabel>
@@ -48,6 +49,7 @@ void MainWindow::on_actionOpen_triggered()
         if(this->file->isUnknownArch() || !this->file->isInValidState()){
             QMessageBox::warning(this, "File error", "File is invalid for some reason");
         }else{
+            this->ui->fieldArch->setText(MyUtils::architectureEnumToQString(this->file->getTargetArchitecture()));
             emit fileChoosed(this->file.get());
         }
     }

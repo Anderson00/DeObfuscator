@@ -26,6 +26,8 @@ public slots:
 private slots:
     void on_treeWidget_itemClicked(QTreeWidgetItem *item, int column);
 
+    void on_vertical_sectionClicked(int index);
+
 private:
     void onMzHeaderItemClicked(QTreeWidgetItem *item, int column);
     void onPeHeaderItemClicked(QTreeWidgetItem *item, int column);
@@ -41,6 +43,8 @@ private:
 
     QString initialItem = "MZ Header";
     QString currentItem = "";
+    size_t currentBaseAddressHexTable = 0;
+    size_t currentBytesPerRowHexTable = 0;
     const QList<ProgramFieldsModel>* currentFields;
 };
 

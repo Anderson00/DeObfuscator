@@ -14,6 +14,8 @@ ProgramHeader::ProgramHeader(QWidget *parent) :
 {
     ui->setupUi(this);
     this->setWindowTitle("Program Header");
+
+    QObject::connect(this->ui->fieldsTable->verticalHeader(), &QHeaderView::sectionClicked, this, &ProgramHeader::on_vertical_sectionClicked);
 }
 
 ProgramHeader::~ProgramHeader()
@@ -37,7 +39,48 @@ void ProgramHeader::on_treeWidget_itemClicked(QTreeWidgetItem *item, int column)
         onPeHeaderItemClicked(item, column);
     }else if(itemClicked == "File Header"){
         onFileHeaderItemClicked(item, column);
+    }else if(itemClicked == "Optional Header"){
+        onOptionalHeaderItemClicked(item, column);
     }
+}
+
+void ProgramHeader::on_vertical_sectionClicked(int index)
+{
+    qDebug() << index;
+
+    auto field = this->currentFields->at(index);
+    //qDebug() << field.getField();
+
+    //this->ui->hexTable->setRangeSelected({1,0,1,1}, true);
+    this->ui->hexTable->verticalHeaderItem(0)->text();
+    int colCount = this->ui->hexTable->columnCount();
+    int rowCount = this->ui->hexTable->rowCount();
+    size_t fieldAddress = this->currentBaseAddressHexTable + field.getOffset();
+
+    int col = fieldAddress % this->currentBytesPerRowHexTable;
+    int row = (fieldAddress / this->currentBytesPerRowHexTable) % rowCount;
+    int rrow = ((fieldAddress + field.getSizeBytes() - 1)/ this->currentBytesPerRowHexTable) % rowCount;
+
+    this->ui->hexTable->clearSelection();
+    if(rrow != row){
+
+        //this->ui->hexTable->setRangeSelected({row,col,row, colCount - 2}, true);
+        for(int i = 1, byteCount = field.getSizeBytes(); i <= (rrow - row); i++){
+//            qDebug() << ">>> " << byteCount;
+//            int next = byteCount - colCount - 1;
+//            if(next )
+//            this->ui->hexTable->setRangeSelected({row,col,row, colCount - 2}, true);
+//            byteCount -=
+//            //byteCount += nextLeft - 1;
+//            //((colCount - 1) - col)
+        }
+    }else{
+        this->ui->hexTable->setRangeSelected({row,col,row, col + field.getSizeBytes() - 1}, true);
+    }
+
+    qDebug() << row << " " << col << " " << rrow;
+
+
 }
 
 void ProgramHeader::onMzHeaderItemClicked(QTreeWidgetItem *item, int column)
@@ -76,13 +119,35 @@ void ProgramHeader::onFileHeaderItemClicked(QTreeWidgetItem *item, int column)
     this->hexTableShowMemory(res + 0x04, MyUtils::getNtHeaderSize(this->file->getTargetArchitecture()));
 }
 
+void ProgramHeader::onOptionalHeaderItemClicked(QTreeWidgetItem *item, int column)
+{
+    if(this->currentItem == "Optional Header")
+        return;
+    this->currentItem = "Optional Header";
+
+    std::uint64_t res = 0;
+    this->file->get4ByteOffset(0x3c, res);
+
+    size_t offset = res + 0x4 + sizeof(PeLib::PELIB_IMAGE_FILE_HEADER);
+    if(this->file->getTargetArchitecture() == retdec::fileformat::Architecture::X86){
+        offset += sizeof(PeLib::PELIB_IMAGE_OPTIONAL_HEADER32);
+    }else{
+        offset += sizeof(PeLib::PELIB_IMAGE_OPTIONAL_HEADER64);
+    }
+
+
+    this->insertProgramFieldsModelListinFieldsRow(MyUtils::getOptionalHeaderFieldsList(this->file->getTargetArchitecture()), offset);
+    this->hexTableShowMemory(offset, MyUtils::getNtHeaderSize(this->file->getTargetArchitecture()));
+
+}
+
 void ProgramHeader::insertProgramFieldsModelListinFieldsRow(const QList<ProgramFieldsModel> &list, size_t baseAddress)
 {
     this->currentFields = &list;
     this->ui->fieldsTable->clear();
     this->ui->fieldsTable->setHorizontalHeaderLabels({"Field", "Value", "Desc"});
     this->ui->fieldsTable->setRowCount(list.size());
-
+    this->ui->fieldsTable->scrollToTop();
 
     int i = 0;
     for(ProgramFieldsModel fields : list){
@@ -102,9 +167,13 @@ void ProgramHeader::insertProgramFieldsModelListinFieldsRow(const QList<ProgramF
 
 void ProgramHeader::hexTableShowMemory(size_t baseAddress, size_t size, int bytesPerRow)
 {
+    this->currentBaseAddressHexTable = baseAddress;
+    this->currentBytesPerRowHexTable = bytesPerRow;
+
     this->ui->hexTable->clear();
     this->ui->hexTable->setRowCount((size/bytesPerRow) + 1);
-    this->ui->hexTable->setColumnCount(bytesPerRow);
+    this->ui->hexTable->setColumnCount(bytesPerRow + 1);
+    this->ui->hexTable->scrollToTop();
 
     size_t endAddress = baseAddress + size;
 
@@ -117,6 +186,8 @@ void ProgramHeader::hexTableShowMemory(size_t baseAddress, size_t size, int byte
             QTableWidgetItem *item = new QTableWidgetItem(QString::fromStdString(result));
             item->setTextAlignment(Qt::AlignmentFlag::AlignCenter);
             this->ui->hexTable->setItem(i, j, item);
+            this->file->getString(result, 0, 3);
+            this->ui->hexTable->setItem(i, j + 1, new QTableWidgetItem(QString::fromStdString(result)));
         }
 
         this->ui->hexTable->setVerticalHeaderItem(i, new QTableWidgetItem(MyUtils::convertToHex(newBaseAddress, 4)));

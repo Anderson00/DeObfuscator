@@ -94,14 +94,74 @@ const QList<ProgramFieldsModel> &MyUtils::getOptionalHeaderFieldsList(retdec::fi
     if(arch == retdec::fileformat::Architecture::X86){
         //return x86 fields
         static QList<ProgramFieldsModel> peFields = {
-
+            ProgramFieldsModel(0x00, 2, "Magic", "", ""),
+            ProgramFieldsModel(0x02, 1, "MajorLinkerVersion", "", ""),
+            ProgramFieldsModel(0x03, 1, "MinorLinkerVersion", "", ""),
+            ProgramFieldsModel(0x04, 4, "SizeOfCode", "", ""),
+            ProgramFieldsModel(0x08, 4, "SizeOfInitializedData", "", ""),
+            ProgramFieldsModel(0x0C, 4, "SizeOfUninitializedData", "", ""),
+            ProgramFieldsModel(0x10, 4, "AddressOfEntryPoint", "", ""),
+            ProgramFieldsModel(0x14, 4, "BaseOfCode", "", ""),
+            ProgramFieldsModel(0x18, 4, "BaseOfData", "", ""),
+            ProgramFieldsModel(0x1C, 4, "ImageBase", "", ""),
+            ProgramFieldsModel(0x20, 4, "SectionAlignment", "", ""),
+            ProgramFieldsModel(0x24, 4, "FileAlignment", "", ""),
+            ProgramFieldsModel(0x26, 2, "MajorOperatingSystemVersion", "", ""),
+            ProgramFieldsModel(0x28, 2, "MinorOperatingSystemVersion", "", ""),
+            ProgramFieldsModel(0x2A, 2, "MajorImageVersion", "", ""),
+            ProgramFieldsModel(0x2C, 2, "MinorImageVersion", "", ""),
+            ProgramFieldsModel(0x2E, 2, "MajorSubsystemVersion", "", ""),
+            ProgramFieldsModel(0x30, 2, "MinorSubsystemVersion", "", ""),
+            ProgramFieldsModel(0x32, 4, "Win32VersionValue", "", ""),
+            ProgramFieldsModel(0x36, 4, "SizeOfImage", "", ""),
+            ProgramFieldsModel(0x3A, 4, "SizeOfHeaders", "", ""),
+            ProgramFieldsModel(0x3E, 4, "CheckSum", "", ""),
+            ProgramFieldsModel(0x42, 2, "Subsystem", "", ""),
+            ProgramFieldsModel(0x44, 2, "DllCharacteristics", "", ""),
+            ProgramFieldsModel(0x46, 4, "SizeOfStackReserve", "", ""),
+            ProgramFieldsModel(0x4A, 4, "SizeOfStackCommit", "", ""),
+            ProgramFieldsModel(0x4E, 4, "SizeOfHeapReserve", "", ""),
+            ProgramFieldsModel(0x52, 4, "SizeOfHeapCommit", "", ""),
+            ProgramFieldsModel(0x56, 4, "LoaderFlags", "", ""),
+            ProgramFieldsModel(0x5A, 4, "NumberOfRvaAndSizes", "", ""),
+            ProgramFieldsModel(0x5E, PeLib::PELIB_IMAGE_NUMBEROF_DIRECTORY_ENTRIES, "DataDirectory", "", "")
         };
 
         return peFields;
     }else if(arch == retdec::fileformat::Architecture::X86_64){
         //return x64 fields
         static QList<ProgramFieldsModel> peFields = {
-
+            ProgramFieldsModel(0x00, 2, "Magic", "", ""),
+            ProgramFieldsModel(0x02, 1, "MajorLinkerVersion", "", ""),
+            ProgramFieldsModel(0x03, 1, "MinorLinkerVersion", "", ""),
+            ProgramFieldsModel(0x04, 4, "SizeOfCode", "", ""),
+            ProgramFieldsModel(0x08, 4, "SizeOfInitializedData", "", ""),
+            ProgramFieldsModel(0x0C, 4, "SizeOfUninitializedData", "", ""),
+            ProgramFieldsModel(0x10, 4, "AddressOfEntryPoint", "", ""),
+            ProgramFieldsModel(0x14, 4, "BaseOfCode", "", ""),
+            ProgramFieldsModel(0x18, 4, "BaseOfData", "", ""),
+            ProgramFieldsModel(0x1C, 8, "ImageBase", "", ""),
+            ProgramFieldsModel(0x24, 4, "SectionAlignment", "", ""),
+            ProgramFieldsModel(0x28, 4, "FileAlignment", "", ""),
+            ProgramFieldsModel(0x2C, 2, "MajorOperatingSystemVersion", "", ""),
+            ProgramFieldsModel(0x2E, 2, "MinorOperatingSystemVersion", "", ""),
+            ProgramFieldsModel(0x30, 2, "MajorImageVersion", "", ""),
+            ProgramFieldsModel(0x32, 2, "MinorImageVersion", "", ""),
+            ProgramFieldsModel(0x34, 2, "MajorSubsystemVersion", "", ""),
+            ProgramFieldsModel(0x36, 2, "MinorSubsystemVersion", "", ""),
+            ProgramFieldsModel(0x38, 4, "Win32VersionValue", "", ""),
+            ProgramFieldsModel(0x3C, 4, "SizeOfImage", "", ""),
+            ProgramFieldsModel(0x40, 4, "SizeOfHeaders", "", ""),
+            ProgramFieldsModel(0x44, 4, "CheckSum", "", ""),
+            ProgramFieldsModel(0x48, 2, "Subsystem", "", ""),
+            ProgramFieldsModel(0x4A, 2, "DllCharacteristics", "", ""),
+            ProgramFieldsModel(0x4C, 8, "SizeOfStackReserve", "", ""),
+            ProgramFieldsModel(0x54, 8, "SizeOfStackCommit", "", ""),
+            ProgramFieldsModel(0x5C, 8, "SizeOfHeapReserve", "", ""),
+            ProgramFieldsModel(0x64, 8, "SizeOfHeapCommit", "", ""),
+            ProgramFieldsModel(0x6C, 4, "LoaderFlags", "", ""),
+            ProgramFieldsModel(0x70, 4, "NumberOfRvaAndSizes", "", ""),
+            ProgramFieldsModel(0x74, PeLib::PELIB_IMAGE_NUMBEROF_DIRECTORY_ENTRIES, "DataDirectory", "", "")
         };
 
         return peFields;
@@ -133,4 +193,22 @@ size_t MyUtils::getNtHeaderSize(retdec::fileformat::Architecture arch)
               );
 
     return sizeOfPeHeader;
+}
+
+QString MyUtils::architectureEnumToQString(retdec::fileformat::Architecture arch)
+{
+    switch(arch){
+    case retdec::fileformat::Architecture::ARM:
+        return "ARM";
+    case retdec::fileformat::Architecture::X86:
+        return "X86";
+    case retdec::fileformat::Architecture::X86_64:
+        return "x64";
+    case retdec::fileformat::Architecture::POWERPC:
+        return "PowerPC";
+    case retdec::fileformat::Architecture::MIPS:
+        return "Mips";
+    default:
+        return "Unknow";
+    }
 }

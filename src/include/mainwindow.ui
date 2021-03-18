@@ -122,6 +122,29 @@
        </spacer>
       </item>
       <item>
+       <widget class="QLabel" name="fieldArch">
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_7">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Minimum</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>5</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
        <widget class="QLabel" name="fileSize">
         <property name="text">
          <string/>
@@ -281,11 +304,19 @@
    </property>
   </action>
   <action name="actionExit">
+   <property name="icon">
+    <iconset resource="../resources/icons.qrc">
+     <normaloff>:/icons/exit-to-app.svg</normaloff>:/icons/exit-to-app.svg</iconset>
+   </property>
    <property name="text">
     <string>Exit</string>
    </property>
   </action>
   <action name="actionPreferences">
+   <property name="icon">
+    <iconset resource="../resources/icons.qrc">
+     <normaloff>:/icons/cog.svg</normaloff>:/icons/cog.svg</iconset>
+   </property>
    <property name="text">
     <string>Preferences</string>
    </property>
@@ -296,6 +327,10 @@
    </property>
   </action>
   <action name="actionAbout">
+   <property name="icon">
+    <iconset resource="../resources/icons.qrc">
+     <normaloff>:/icons/information.svg</normaloff>:/icons/information.svg</iconset>
+   </property>
    <property name="text">
     <string>About</string>
    </property>

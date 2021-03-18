@@ -3,5 +3,8 @@
         <file>file-document-edit-outline.svg</file>
         <file>content-save-edit-outline.svg</file>
         <file>content-save-cog-outline.svg</file>
+        <file>cog.svg</file>
+        <file>exit-to-app.svg</file>
+        <file>information.svg</file>
     </qresource>
 </RCC>
