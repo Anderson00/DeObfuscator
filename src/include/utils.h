@@ -19,6 +19,10 @@ namespace MyUtils {
     size_t getNtHeaderSize(retdec::fileformat::Architecture arch);
 
 
+    namespace Math {
+        int clamp(int val, int min, int max);
+    }
+
 };
 
 #endif // UTILS_H

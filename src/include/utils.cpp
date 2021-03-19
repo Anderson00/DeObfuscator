@@ -212,3 +212,16 @@ QString MyUtils::architectureEnumToQString(retdec::fileformat::Architecture arch
         return "Unknow";
     }
 }
+
+
+int MyUtils::Math::clamp(int val, int min, int max)
+{
+    assert(min <= max);
+    if(val >= min && val <= max){
+        return val;
+    }else if(val < min){
+        return min;
+    }else{
+        return max;
+    }
+}

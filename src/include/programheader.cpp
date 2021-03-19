@@ -49,7 +49,7 @@ void ProgramHeader::on_vertical_sectionClicked(int index)
     qDebug() << index;
 
     auto field = this->currentFields->at(index);
-    //qDebug() << field.getField();
+    qDebug() << this->currentBaseAddressHexTable << field.getSizeBytes();
 
     //this->ui->hexTable->setRangeSelected({1,0,1,1}, true);
     this->ui->hexTable->verticalHeaderItem(0)->text();
@@ -64,15 +64,15 @@ void ProgramHeader::on_vertical_sectionClicked(int index)
     this->ui->hexTable->clearSelection();
     if(rrow != row){
 
-        //this->ui->hexTable->setRangeSelected({row,col,row, colCount - 2}, true);
-        for(int i = 1, byteCount = field.getSizeBytes(); i <= (rrow - row); i++){
-//            qDebug() << ">>> " << byteCount;
-//            int next = byteCount - colCount - 1;
-//            if(next )
-//            this->ui->hexTable->setRangeSelected({row,col,row, colCount - 2}, true);
-//            byteCount -=
-//            //byteCount += nextLeft - 1;
-//            //((colCount - 1) - col)
+        this->ui->hexTable->setRangeSelected({row,col,row, colCount - 2}, true);
+        for(int i = 1, byteCount = field.getSizeBytes() - (col - colCount - 2); i <= (rrow - row); i++){
+
+            int next = (byteCount - colCount) - 1;
+            int nextClamp = MyUtils::Math::clamp(next, 0, colCount - 2);
+            this->ui->hexTable->setRangeSelected({row + i, 0, row + i, nextClamp}, true);
+
+            qDebug() << ">>> " << next << nextClamp << " " << byteCount;
+            byteCount -= nextClamp;
         }
     }else{
         this->ui->hexTable->setRangeSelected({row,col,row, col + field.getSizeBytes() - 1}, true);
@@ -186,7 +186,7 @@ void ProgramHeader::hexTableShowMemory(size_t baseAddress, size_t size, int byte
             QTableWidgetItem *item = new QTableWidgetItem(QString::fromStdString(result));
             item->setTextAlignment(Qt::AlignmentFlag::AlignCenter);
             this->ui->hexTable->setItem(i, j, item);
-            this->file->getString(result, 0, 3);
+            this->file->getString(result, newBaseAddress, bytesPerRow);
             this->ui->hexTable->setItem(i, j + 1, new QTableWidgetItem(QString::fromStdString(result)));
         }
 
