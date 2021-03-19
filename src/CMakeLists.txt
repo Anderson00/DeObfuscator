@@ -9,8 +9,12 @@ set(PROJECT_SOURCES
     include/programfieldsmodel.cpp
     include/mainwindow.cpp
     include/mainwindow.ui
-    include/programheader.cpp
-    include/programheader.ui)
+    include/subwindows/programheader.cpp
+    include/subwindows/programheader.h
+    include/subwindows/programheader.ui
+    include/subwindows/debuggermain.cpp
+    include/subwindows/debuggermain.h
+    include/subwindows/debuggermain.ui)
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(Main

@@ -1,7 +1,8 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
 
-#include "programheader.h"
+#include "subwindows/programheader.h"
+#include "subwindows/debuggermain.h"
 #include "utils.h"
 #include <QMessageBox>
 #include <QDebug>
@@ -15,9 +16,11 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    ui->mdiArea->tileSubWindows();
+    //ui->mdiArea->tileSubWindows();
     ProgramHeader *pHeader = new ProgramHeader(this);
+    DebuggerMain *dMain = new DebuggerMain(this);
     ui->mdiArea->addSubWindow(pHeader);
+    ui->mdiArea->addSubWindow(dMain);
 
     //QObject::connect(this, SIGNAL(fileChoosed(retdec::fileformat::FileFormat*)), pHeader, SLOT(on_fileChoosed(retdec::fileformat::FileFormat*)));
     QObject::connect(this, &MainWindow::fileChoosed, pHeader, &ProgramHeader::on_fileIsChoosed);
