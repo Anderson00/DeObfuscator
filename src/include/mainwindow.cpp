@@ -17,13 +17,6 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
 
     //ui->mdiArea->tileSubWindows();
-    ProgramHeader *pHeader = new ProgramHeader(this);
-    DebuggerMain *dMain = new DebuggerMain(this);
-    ui->mdiArea->addSubWindow(pHeader);
-    ui->mdiArea->addSubWindow(dMain);
-
-    //QObject::connect(this, SIGNAL(fileChoosed(retdec::fileformat::FileFormat*)), pHeader, SLOT(on_fileChoosed(retdec::fileformat::FileFormat*)));
-    QObject::connect(this, &MainWindow::fileChoosed, pHeader, &ProgramHeader::on_fileIsChoosed);
 }
 
 MainWindow::~MainWindow()
@@ -57,4 +50,35 @@ void MainWindow::on_actionOpen_triggered()
         }
     }
 
+}
+
+void MainWindow::on_actionProgram_header_toggled(bool arg1)
+{
+    if(arg1){
+        pHeader = new ProgramHeader(this);
+        sub = ui->mdiArea->addSubWindow(pHeader);
+        pHeader->show();
+
+        QObject::connect(this, &MainWindow::fileChoosed, pHeader, &ProgramHeader::on_fileIsChoosed);
+        QObject::connect(sub, &QMdiSubWindow::destroyed, [=](){
+            ui->actionProgram_header->setChecked(false);
+        });
+    }else{
+        if(pHeader){
+            ui->mdiArea->removeSubWindow(sub);
+        }
+    }
+
+
+}
+
+void MainWindow::on_actionFullscreen_triggered()
+{
+    if(!this->isFullScreen()){
+        ui->actionFullscreen->setIcon(QIcon(":/icons/fullscreen-exit.svg"));
+        this->showFullScreen();
+    }else{
+        ui->actionFullscreen->setIcon(QIcon(":/icons/fullscreen.svg"));
+        this->showNormal();
+    }
 }

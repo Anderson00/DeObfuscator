@@ -249,8 +249,88 @@
     <addaction name="actiondocumentation"/>
     <addaction name="actionAbout"/>
    </widget>
+   <widget class="QMenu" name="menuDebug">
+    <property name="title">
+     <string>Debug</string>
+    </property>
+    <addaction name="actionstart"/>
+    <addaction name="actionPause"/>
+    <addaction name="actionstop"/>
+    <addaction name="separator"/>
+    <addaction name="actionstep_into"/>
+    <addaction name="actionstep_over"/>
+    <addaction name="actionstep_all"/>
+    <addaction name="separator"/>
+    <addaction name="actionToogle_Breakpoints"/>
+   </widget>
+   <widget class="QMenu" name="menuView">
+    <property name="title">
+     <string>View</string>
+    </property>
+    <widget class="QMenu" name="menuOutput">
+     <property name="title">
+      <string>Output</string>
+     </property>
+     <addaction name="actionShow_Console"/>
+     <addaction name="actionLog_output"/>
+    </widget>
+    <widget class="QMenu" name="menuCharts">
+     <property name="title">
+      <string>Charts</string>
+     </property>
+     <addaction name="separator"/>
+     <addaction name="actionResources"/>
+     <addaction name="separator"/>
+     <addaction name="actionMemory"/>
+     <addaction name="actionCPU"/>
+    </widget>
+    <widget class="QMenu" name="menuSubwindows">
+     <property name="title">
+      <string>Subwindows</string>
+     </property>
+     <addaction name="actionGeneral"/>
+     <addaction name="separator"/>
+     <addaction name="actionBreakpoints"/>
+     <addaction name="actionStack_Trace"/>
+     <addaction name="actionHooks"/>
+     <addaction name="actionProgram_header"/>
+    </widget>
+    <addaction name="actionShow"/>
+    <addaction name="menuSubwindows"/>
+    <addaction name="separator"/>
+    <addaction name="menuOutput"/>
+    <addaction name="menuCharts"/>
+   </widget>
+   <widget class="QMenu" name="menuBuild">
+    <property name="title">
+     <string>Build</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuWindow">
+    <property name="title">
+     <string>Window</string>
+    </property>
+    <widget class="QMenu" name="menuSubwindows_2">
+     <property name="title">
+      <string>Subwindows</string>
+     </property>
+     <addaction name="actionGrid"/>
+     <addaction name="separator"/>
+     <addaction name="actionHorizontal"/>
+     <addaction name="actionVertical"/>
+     <addaction name="separator"/>
+     <addaction name="actionPersonalized"/>
+    </widget>
+    <addaction name="actionFullscreen"/>
+    <addaction name="separator"/>
+    <addaction name="menuSubwindows_2"/>
+   </widget>
    <addaction name="menuFile"/>
    <addaction name="menuEdit"/>
+   <addaction name="menuView"/>
+   <addaction name="menuBuild"/>
+   <addaction name="menuDebug"/>
+   <addaction name="menuWindow"/>
    <addaction name="menuHelp"/>
   </widget>
   <widget class="QToolBar" name="toolBar">
@@ -333,6 +413,218 @@
    </property>
    <property name="text">
     <string>About</string>
+   </property>
+  </action>
+  <action name="actionstart">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../resources/icons.qrc">
+     <normaloff>:/icons/play.svg</normaloff>:/icons/play.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Start</string>
+   </property>
+  </action>
+  <action name="actionstop">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../resources/icons.qrc">
+     <normaloff>:/icons/stop.svg</normaloff>:/icons/stop.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Stop</string>
+   </property>
+  </action>
+  <action name="actionstep_over">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../resources/icons.qrc">
+     <normaloff>:/icons/debug-step-over.svg</normaloff>:/icons/debug-step-over.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Step over</string>
+   </property>
+  </action>
+  <action name="actionstep_all">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../resources/icons.qrc">
+     <normaloff>:/icons/step-forward-2.svg</normaloff>:/icons/step-forward-2.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Step out</string>
+   </property>
+  </action>
+  <action name="actionstep_into">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../resources/icons.qrc">
+     <normaloff>:/icons/debug-step-into.svg</normaloff>:/icons/debug-step-into.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Step into</string>
+   </property>
+  </action>
+  <action name="actionToogle_Breakpoints">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Toogle Breakpoints</string>
+   </property>
+  </action>
+  <action name="actionShow">
+   <property name="text">
+    <string>Show Main</string>
+   </property>
+  </action>
+  <action name="actionShow_Console">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Console</string>
+   </property>
+  </action>
+  <action name="actionLog_output">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Log output</string>
+   </property>
+  </action>
+  <action name="actionPause">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../resources/icons.qrc">
+     <normaloff>:/icons/pause.svg</normaloff>:/icons/pause.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Pause</string>
+   </property>
+  </action>
+  <action name="actionResources">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../resources/icons.qrc">
+     <normaloff>:/icons/chart-line.svg</normaloff>:/icons/chart-line.svg</iconset>
+   </property>
+   <property name="text">
+    <string>General</string>
+   </property>
+  </action>
+  <action name="actionResources_2">
+   <property name="text">
+    <string>Resources</string>
+   </property>
+  </action>
+  <action name="actionMemory">
+   <property name="text">
+    <string>Memory</string>
+   </property>
+  </action>
+  <action name="actionCPU">
+   <property name="text">
+    <string>CPU</string>
+   </property>
+  </action>
+  <action name="actionGeneral">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Main Debugger</string>
+   </property>
+  </action>
+  <action name="actionBreakpoints">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Breakpoints</string>
+   </property>
+  </action>
+  <action name="actionHooks">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Hooks</string>
+   </property>
+  </action>
+  <action name="actionProgram_header">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Program Header</string>
+   </property>
+  </action>
+  <action name="actionStack_Trace">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Stack Trace</string>
+   </property>
+  </action>
+  <action name="actionFullscreen">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../resources/icons.qrc">
+     <normaloff>:/icons/fullscreen.svg</normaloff>:/icons/fullscreen.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Fullscreen</string>
+   </property>
+  </action>
+  <action name="actionGrid">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Grid</string>
+   </property>
+  </action>
+  <action name="actionHorizontal">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Horizontal</string>
+   </property>
+  </action>
+  <action name="actionVertical">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Vertical</string>
+   </property>
+  </action>
+  <action name="actionPersonalized">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Custom</string>
    </property>
   </action>
  </widget>

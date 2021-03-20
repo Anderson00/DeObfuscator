@@ -2,8 +2,11 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QMdiArea>
+#include <QMdiSubWindow>
 #include <QDialog>
 #include <QFileDialog>
+#include "subwindows/programheader.h"
 
 #include <retdec/fileformat/format_factory.h>
 
@@ -27,8 +30,14 @@ private slots:
 
     void on_actionOpen_triggered();
 
+    void on_actionProgram_header_toggled(bool arg1);
+
+    void on_actionFullscreen_triggered();
+
 private:
     Ui::MainWindow *ui;
+    ProgramHeader *pHeader;
+    QMdiSubWindow *sub;
     std::unique_ptr<retdec::fileformat::FileFormat> file;
 
 };
