@@ -58,8 +58,8 @@ void ProgramHeader::on_vertical_sectionClicked(int index)
     size_t fieldAddress = this->currentBaseAddressHexTable + field.getOffset();
 
     int col = fieldAddress % this->currentBytesPerRowHexTable;
-    int row = (fieldAddress / this->currentBytesPerRowHexTable) % rowCount;
-    int rrow = ((fieldAddress + field.getSizeBytes() - 1)/ this->currentBytesPerRowHexTable) % rowCount;
+    int row = ((fieldAddress - this->currentBaseAddressHexTable) / this->currentBytesPerRowHexTable) % rowCount;
+    int rrow = (((fieldAddress - this->currentBaseAddressHexTable) + field.getSizeBytes() - 1)/ this->currentBytesPerRowHexTable) % rowCount;
 
     this->ui->hexTable->clearSelection();
     if(rrow != row){

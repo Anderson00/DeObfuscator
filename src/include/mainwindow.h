@@ -36,8 +36,11 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+
+    //SubWindows
     ProgramHeader *pHeader;
-    QMdiSubWindow *sub;
+    //end
+
     std::unique_ptr<retdec::fileformat::FileFormat> file;
 
 };

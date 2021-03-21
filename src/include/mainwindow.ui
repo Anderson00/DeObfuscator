@@ -334,6 +334,9 @@
    <addaction name="menuHelp"/>
   </widget>
   <widget class="QToolBar" name="toolBar">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="windowTitle">
     <string>toolBar</string>
    </property>
@@ -343,6 +346,10 @@
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
+   <addaction name="actionStartPause"/>
+   <addaction name="actionStop"/>
+   <addaction name="separator"/>
+   <addaction name="actionStep_Into"/>
   </widget>
   <action name="actionOpen">
    <property name="icon">
@@ -594,6 +601,9 @@
    <property name="text">
     <string>Fullscreen</string>
    </property>
+   <property name="shortcut">
+    <string>F11</string>
+   </property>
   </action>
   <action name="actionGrid">
    <property name="checkable">
@@ -625,6 +635,48 @@
    </property>
    <property name="text">
     <string>Custom</string>
+   </property>
+  </action>
+  <action name="actionStartPause">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../resources/icons.qrc">
+     <normaloff>:/icons/play.svg</normaloff>:/icons/play.svg</iconset>
+   </property>
+   <property name="text">
+    <string>StartPause</string>
+   </property>
+   <property name="toolTip">
+    <string>Start</string>
+   </property>
+  </action>
+  <action name="actionStop">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../resources/icons.qrc">
+     <normaloff>:/icons/stop.svg</normaloff>:/icons/stop.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Stop</string>
+   </property>
+   <property name="toolTip">
+    <string>Stop</string>
+   </property>
+  </action>
+  <action name="actionStep_Into">
+   <property name="icon">
+    <iconset resource="../resources/icons.qrc">
+     <normaloff>:/icons/debug-step-into.svg</normaloff>:/icons/debug-step-into.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Step Into</string>
+   </property>
+   <property name="toolTip">
+    <string>Step Into</string>
    </property>
   </action>
  </widget>

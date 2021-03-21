@@ -17,6 +17,8 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
 
     //ui->mdiArea->tileSubWindows();
+    DebuggerMain *dMain = new DebuggerMain(this);
+    this->ui->mdiArea->addSubWindow(dMain);
 }
 
 MainWindow::~MainWindow()
@@ -54,8 +56,13 @@ void MainWindow::on_actionOpen_triggered()
 
 void MainWindow::on_actionProgram_header_toggled(bool arg1)
 {
+    static QMdiSubWindow *sub;
+
     if(arg1){
         pHeader = new ProgramHeader(this);
+        if(this->file.get() != nullptr){
+            pHeader->on_fileIsChoosed(file.get());
+        }
         sub = ui->mdiArea->addSubWindow(pHeader);
         pHeader->show();
 
