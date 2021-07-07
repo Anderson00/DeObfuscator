@@ -3,6 +3,7 @@ cmake_minimum_required(VERSION 3.8)
 set(PROJECT_SOURCES
     main.cpp
     resources/icons.qrc
+    resources/qml.qrc
     include/utils.h
     include/utils.cpp
     include/programfieldsmodel.h

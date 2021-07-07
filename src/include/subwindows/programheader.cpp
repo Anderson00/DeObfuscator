@@ -46,10 +46,10 @@ void ProgramHeader::on_treeWidget_itemClicked(QTreeWidgetItem *item, int column)
 
 void ProgramHeader::on_vertical_sectionClicked(int index)
 {
-    qDebug() << index;
+    //qDebug() << index;
 
     auto field = this->currentFields->at(index);
-    qDebug() << this->currentBaseAddressHexTable << field.getSizeBytes();
+    //qDebug() << this->currentBaseAddressHexTable << field.getSizeBytes();
 
     //this->ui->hexTable->setRangeSelected({1,0,1,1}, true);
     this->ui->hexTable->verticalHeaderItem(0)->text();
@@ -62,6 +62,7 @@ void ProgramHeader::on_vertical_sectionClicked(int index)
     int rrow = (((fieldAddress - this->currentBaseAddressHexTable) + field.getSizeBytes() - 1)/ this->currentBytesPerRowHexTable) % rowCount;
 
     this->ui->hexTable->clearSelection();
+
     if(rrow != row){
 
         this->ui->hexTable->setRangeSelected({row,col,row, colCount - 2}, true);
@@ -71,16 +72,16 @@ void ProgramHeader::on_vertical_sectionClicked(int index)
             int nextClamp = MyUtils::Math::clamp(next, 0, colCount - 2);
             this->ui->hexTable->setRangeSelected({row + i, 0, row + i, nextClamp}, true);
 
-            qDebug() << ">>> " << next << nextClamp << " " << byteCount;
+            //qDebug() << ">>> " << next << nextClamp << " " << byteCount;
             byteCount -= nextClamp;
         }
     }else{
         this->ui->hexTable->setRangeSelected({row,col,row, col + field.getSizeBytes() - 1}, true);
     }
 
-    qDebug() << row << " " << col << " " << rrow;
+    this->ui->hexTable->scrollToItem(this->ui->hexTable->selectedItems()[0]);
 
-
+    //qDebug() << row << " " << col << " " << rrow;
 }
 
 void ProgramHeader::onMzHeaderItemClicked(QTreeWidgetItem *item, int column)

@@ -8,7 +8,6 @@ class ProgramFieldsModel
 public:
     ProgramFieldsModel(const int& offset, size_t sizeBytes, const QString& field, const QString& value, const QString& desc);
 
-
     QString getField() const;
     void setField(const QString &value);
 
