@@ -1,12 +1,28 @@
 name: CMake
-
-on: [push]
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    types: [opened, synchronize, reopened]
 
 env:
   # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
   BUILD_TYPE: Release
 
 jobs:
+  sonarcloud:
+    name: SonarCloud
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
   build:
     # The CMake configure and build commands are platform agnostic and should work equally
     # well on Windows or Mac.  You can convert this to a matrix build if you need
@@ -16,6 +32,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    
+    - name: submodules-init
+      # You may pin to the exact commit or the version.
+      # uses: snickerbockers/submodules-init@74927a8bb0fe1bb0f1f1e4d102384a8e69f19171
+      uses: snickerbockers/submodules-init@v4
     
     - name: Install Qt
       # You may pin to the exact commit or the version.
