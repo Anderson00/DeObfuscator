@@ -17,6 +17,11 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
+    - name: submodules-init
+      # You may pin to the exact commit or the version.
+      # uses: snickerbockers/submodules-init@74927a8bb0fe1bb0f1f1e4d102384a8e69f19171
+      uses: snickerbockers/submodules-init@v4
+    
     - name: Install Qt
       # You may pin to the exact commit or the version.
       # uses: jurplel/install-qt-action@88f3374475d094ce56ca6a7cc41cfda5a6ec093c
