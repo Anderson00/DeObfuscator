@@ -1,5 +1,8 @@
 cmake_minimum_required(VERSION 3.8)
 
+find_package(QT NAMES Qt6 Qt5 COMPONENTS Core Quick Gui Svg Sql Network Test REQUIRED)
+find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Core Svg Gui Sql Quick Network Test REQUIRED)
+
 set(PROJECT_SOURCES
     main.cpp
     resources/icons.qrc
@@ -10,6 +13,8 @@ set(PROJECT_SOURCES
     include/programfieldsmodel.cpp
     include/mainwindow.cpp
     include/mainwindow.ui
+    include/qmlwindow.cpp
+    include/qmlwindow.h
     include/subwindows/programheader.cpp
     include/subwindows/programheader.h
     include/subwindows/programheader.ui
@@ -33,7 +38,7 @@ else()
     endif()
 endif()
 
-target_link_libraries(Main PRIVATE Qt${QT_VERSION_MAJOR}::Widgets cxxopts unicorn retdec)
+target_link_libraries(Main PRIVATE Qt${QT_VERSION_MAJOR}::Widgets Qt${QT_VERSION_MAJOR}::Core Qt${QT_VERSION_MAJOR}::Quick cxxopts unicorn retdec)
 
 #add_executable(Main main.cpp ${SOURCE_FILES_CURSES})
 

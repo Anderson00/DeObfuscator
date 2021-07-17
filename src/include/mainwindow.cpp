@@ -10,6 +10,8 @@
 #include <sstream>
 #include <iomanip>
 
+#include <QQuickView>
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)

@@ -3,10 +3,6 @@
 
 #include <QMainWindow>
 
-namespace Ui {
-class DebuggerMain;
-}
-
 class DebuggerMain : public QMainWindow
 {
     Q_OBJECT
@@ -14,9 +10,6 @@ class DebuggerMain : public QMainWindow
 public:
     explicit DebuggerMain(QWidget *parent = nullptr);
     ~DebuggerMain();
-
-private:
-    Ui::DebuggerMain *ui;
 };
 
 #endif // DEBUGGERMAIN_H
