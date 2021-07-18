@@ -9,11 +9,11 @@
 QMLWindow::QMLWindow(QWidget *parent) : QMainWindow(parent)
 {
 
-    this->view = new QQuickView(this->windowHandle());
+    this->m_view = new QQuickView(this->windowHandle());
 
 }
 
 QMLWindow::~QMLWindow()
 {
-    delete view;
+    delete m_view;
 }

@@ -12,6 +12,8 @@ public:
     explicit QMLWindow(QWidget *parent = nullptr);
     virtual ~QMLWindow();
 
+
+
 protected:
     QQuickView *view();
 
