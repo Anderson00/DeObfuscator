@@ -14,46 +14,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Checkout repository
+      uses: actions/checkout@master
+    - name: Checkout submodules
+      uses: textbook/git-checkout-submodule-action@master
     - uses: actions/checkout@v2
-    - name: dowwload sonar cloud client
-      working-directory: ${{github.workspace}}
-      shell: bash
-      run: |
-        wget -nv https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.6.0.2311-linux.zip
-        unzip -q sonar-scanner-cli-4.6.0.2311-linux.zip
-        echo "${PWD}/sonar-scanner-4.6.0.2311-linux/bin/" >> $GITHUB_PATH
-        wget -nv https://sonarcloud.io/static/cpp/build-wrapper-linux-x86.zip
-        unzip -q build-wrapper-linux-x86.zip
-        echo "${PWD}/build-wrapper-linux-x86" >> $GITHUB_PATH
-    - name: Install dependencies
-      shell: bash
-      run: sudo apt-get install -y scons libfftw3-dev libopenmpi-dev openmpi-bin libhdf5-dev python3-numpy python3-dev libtiff5-dev unzip
-    - name: Compile Xmipp
-      working-directory: ${{github.workspace}}
-      shell: bash      
-      run: |
-        mkdir build
-        cd build
-        cmake ..
-        cd ..          
-        build-wrapper-linux-x86-64 --out-dir bw-output cmake --build build/
-        ls -l
-        cd bw-output
-        ls -l
-    - name: SonarCloud Scan
-      working-directory: ${{github.workspace}}
-      run: |
-        sonar-scanner -X -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONAR_TOKEN
-      env:
-       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-       SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-       branch: ${{ github.ref }}
-    
-    - name: submodules-init
-      # You may pin to the exact commit or the version.
-      # uses: snickerbockers/submodules-init@74927a8bb0fe1bb0f1f1e4d102384a8e69f19171
-      uses: snickerbockers/submodules-init@v4
-    
     - name: Install Qt
       # You may pin to the exact commit or the version.
       # uses: jurplel/install-qt-action@88f3374475d094ce56ca6a7cc41cfda5a6ec093c
@@ -63,6 +28,7 @@ jobs:
         #dir: # optional
         # Version of Qt to install
         #version: # optional, default is 5.15.2
+        version: 6.1.0
         # Host platform
         #host: # optional
         # Target platform for build
