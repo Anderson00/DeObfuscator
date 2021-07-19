@@ -3,7 +3,9 @@
 
 #include <QMainWindow>
 
-class DebuggerMain : public QMainWindow
+#include "qmlwindow.h"
+
+class DebuggerMain : public QMLWindow
 {
     Q_OBJECT
 

@@ -8,16 +8,11 @@
 #include <QtQml/QQmlComponent>
 
 DebuggerMain::DebuggerMain(QWidget *parent) :
-    QMainWindow(parent)
+    QMLWindow(parent, QUrl("qrc:/subwindows/DebuggerMain.qml"))
 {
-    QQuickView *qmlView = new QQuickView();
-    qmlView->setSource(QUrl("qrc:/subwindows/DebuggerMain.qml"));
-    qmlView->rootContext()->setContextProperty("window", this);
-    QWidget *container = QWidget::createWindowContainer(qmlView, this);
-    this->setCentralWidget(container);
-    this->setContentsMargins(0,0,0,0);
-    this->setMinimumSize(200, 200);
-    this->show();
+
+    this->setWindowTitle("Debugger");
+    this->setBaseSize(100, 100);
 }
 
 DebuggerMain::~DebuggerMain()

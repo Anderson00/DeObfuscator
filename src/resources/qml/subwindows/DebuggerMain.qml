@@ -9,6 +9,13 @@ Rectangle {
 
     color:'#222'
 
+    Connections{
+        target: window
+
+        function onWindowMaximizing(val){
+            console.log(val);
+        }
+    }
 
     Text{
         text: parent.width + "|"+parent.height
@@ -18,6 +25,7 @@ Rectangle {
         anchors.fill: parent
 
         onClicked: {
+            console.log(window);
             console.log(mouse.x + "|"+mouse.y);
             mycanvas2.conexoes.push([mouse.x , mouse.y])
 

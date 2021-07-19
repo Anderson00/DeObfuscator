@@ -9,15 +9,19 @@ class QMLWindow : public QMainWindow
 {
     Q_OBJECT
 public:
-    explicit QMLWindow(QWidget *parent = nullptr);
+    explicit QMLWindow(QWidget *parent = nullptr, const QUrl& qmlUrl = QUrl(""));
     virtual ~QMLWindow();
 
-
+    void changeEvent(QEvent* e);
 
 protected:
+    void setQMLSourceUrl(const QUrl& url);
     QQuickView *view();
 
 signals:
+    void windowMaximizing(bool isMaximizing);
+    void windowMinimizing(bool isMinimizing);
+    void windowFullScreen(bool isFullScreen);
 
 private:
     QQuickView *m_view;
