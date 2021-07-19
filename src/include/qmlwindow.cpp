@@ -29,7 +29,7 @@ QMLWindow::~QMLWindow()
 
 void QMLWindow::changeEvent(QEvent *e)
 {
-    static Qt::WindowStates prevWinState = 0;
+    static Qt::WindowStates prevWinState = Qt::WindowNoState;
     if (e->type() == QEvent::WindowStateChange)
     {
 
