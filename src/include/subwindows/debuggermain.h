@@ -4,8 +4,9 @@
 #include <QMainWindow>
 
 #include "qmlwindow.h"
+#include "qmlmdisubwindow.h"
 
-class DebuggerMain : public QMLWindow
+class DebuggerMain : public QMLMdiSubWindow
 {
     Q_OBJECT
 

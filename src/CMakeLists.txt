@@ -15,6 +15,8 @@ set(PROJECT_SOURCES
     include/mainwindow.ui
     include/qmlwindow.cpp
     include/qmlwindow.h
+    include/subwindows/qmlmdisubwindow.cpp
+    include/subwindows/qmlmdisubwindow.h
     include/subwindows/programheader.cpp
     include/subwindows/programheader.h
     include/subwindows/programheader.ui

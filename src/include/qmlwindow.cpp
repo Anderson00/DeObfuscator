@@ -15,7 +15,6 @@ QMLWindow::QMLWindow(QWidget *parent, const QUrl& qmlUrl) : QMainWindow(parent)
     if(qmlUrl.isValid()){
         this->view()->rootContext()->setContextProperty("window", this);
         this->m_view->setSource(qmlUrl);
-
     }
 
     this->setCentralWidget(QWidget::createWindowContainer(this->m_view, this));

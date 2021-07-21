@@ -8,7 +8,7 @@
 #include <QtQml/QQmlComponent>
 
 DebuggerMain::DebuggerMain(QWidget *parent) :
-    QMLWindow(parent, QUrl("qrc:/subwindows/DebuggerMain.qml"))
+    QMLMdiSubWindow(parent, QUrl("qrc:/subwindows/DebuggerMain.qml"))
 {
 
     this->setWindowTitle("Debugger");
