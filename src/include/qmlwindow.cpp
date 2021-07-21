@@ -2,6 +2,7 @@
 #include <QQuickView>
 #include <QMessageBox>
 #include <QGuiApplication>
+#include <QSettings>
 #include <QtQuickWidgets/QQuickWidget>
 #include <QtQml/QQmlApplicationEngine>
 #include <QtQml/QQmlContext>
@@ -14,12 +15,12 @@ QMLWindow::QMLWindow(QWidget *parent, const QUrl& qmlUrl) : QMainWindow(parent)
     if(qmlUrl.isValid()){
         this->view()->rootContext()->setContextProperty("window", this);
         this->m_view->setSource(qmlUrl);
+
     }
 
     this->setCentralWidget(QWidget::createWindowContainer(this->m_view, this));
     this->setContentsMargins(0, 0, 0, 0);
     this->setMinimumSize(50, 50);
-
 }
 
 QMLWindow::~QMLWindow()
@@ -55,6 +56,12 @@ void QMLWindow::changeEvent(QEvent *e)
     }
 
     QWidget::changeEvent(e);
+}
+
+void QMLWindow::closeEvent(QCloseEvent *event)
+{
+    emit closeWindow();
+    QMainWindow::closeEvent(event);
 }
 
 void QMLWindow::setQMLSourceUrl(const QUrl &url)

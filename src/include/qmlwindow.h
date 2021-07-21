@@ -12,13 +12,17 @@ public:
     explicit QMLWindow(QWidget *parent = nullptr, const QUrl& qmlUrl = QUrl(""));
     virtual ~QMLWindow();
 
+    //Virtuals
     void changeEvent(QEvent* e);
+    void closeEvent(QCloseEvent *event);
+    //Virtuals end
 
 protected:
     void setQMLSourceUrl(const QUrl& url);
     QQuickView *view();
 
 signals:
+    void closeWindow();
     void windowMaximizing(bool isMaximizing);
     void windowMinimizing(bool isMinimizing);
     void windowFullScreen(bool isFullScreen);

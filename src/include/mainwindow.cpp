@@ -19,7 +19,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
 
     //ui->mdiArea->tileSubWindows();
-    DebuggerMain *dMain = new DebuggerMain(this);
+    DebuggerMain *dMain = new DebuggerMain(this->ui->mdiArea);
     this->ui->mdiArea->addSubWindow(dMain);
 }
 
