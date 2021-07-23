@@ -9,6 +9,8 @@ set(PROJECT_SOURCES
     resources/qml.qrc
     include/utils.h
     include/utils.cpp
+    include/utils/xmlsavestate.cpp
+    include/utils/xmlsavestate.h
     include/programfieldsmodel.h
     include/programfieldsmodel.cpp
     include/mainwindow.cpp

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 4.15.0, 2021-07-13T09:51:06. -->
+<!-- Written by QtCreator 4.14.2, 2021-07-22T23:35:52. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -37,7 +37,6 @@
    <value type="bool" key="EditorConfiguration.MouseHiding">true</value>
    <value type="bool" key="EditorConfiguration.MouseNavigation">true</value>
    <value type="int" key="EditorConfiguration.PaddingMode">1</value>
-   <value type="bool" key="EditorConfiguration.PreferSingleLineComments">false</value>
    <value type="bool" key="EditorConfiguration.ScrollWheelZooming">true</value>
    <value type="bool" key="EditorConfiguration.ShowMargin">false</value>
    <value type="int" key="EditorConfiguration.SmartBackspaceBehavior">0</value>
@@ -46,7 +45,6 @@
    <value type="int" key="EditorConfiguration.TabKeyBehavior">0</value>
    <value type="int" key="EditorConfiguration.TabSize">8</value>
    <value type="bool" key="EditorConfiguration.UseGlobal">true</value>
-   <value type="bool" key="EditorConfiguration.UseIndenter">false</value>
    <value type="int" key="EditorConfiguration.Utf8BomBehavior">1</value>
    <value type="bool" key="EditorConfiguration.addFinalNewLine">true</value>
    <value type="bool" key="EditorConfiguration.cleanIndentation">true</value>
@@ -61,7 +59,6 @@
   <valuemap type="QVariantMap">
    <valuemap type="QVariantMap" key="AutoTest.ActiveFrameworks">
     <value type="bool" key="AutoTest.Framework.Boost">true</value>
-    <value type="bool" key="AutoTest.Framework.CTest">false</value>
     <value type="bool" key="AutoTest.Framework.Catch">true</value>
     <value type="bool" key="AutoTest.Framework.GTest">true</value>
     <value type="bool" key="AutoTest.Framework.QtQuickTest">true</value>
@@ -96,7 +93,6 @@
    <value type="int" key="ProjectExplorer.Target.ActiveDeployConfiguration">0</value>
    <value type="int" key="ProjectExplorer.Target.ActiveRunConfiguration">0</value>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.BuildConfiguration.0">
-    <value type="QString" key="CMake.Build.Type">Debug</value>
     <value type="QString" key="CMake.Initial.Parameters">-GNinja
 -DCMAKE_BUILD_TYPE:String=Debug
 -DQT_QMAKE_EXECUTABLE:STRING=%{Qt:qmakeExecutable}
@@ -140,7 +136,6 @@
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">CMakeProjectManager.CMakeBuildConfiguration</value>
    </valuemap>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.BuildConfiguration.1">
-    <value type="QString" key="CMake.Build.Type">Release</value>
     <value type="QString" key="CMake.Initial.Parameters">-GNinja
 -DCMAKE_BUILD_TYPE:String=Release
 -DQT_QMAKE_EXECUTABLE:STRING=%{Qt:qmakeExecutable}
@@ -182,7 +177,6 @@
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">CMakeProjectManager.CMakeBuildConfiguration</value>
    </valuemap>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.BuildConfiguration.2">
-    <value type="QString" key="CMake.Build.Type">RelWithDebInfo</value>
     <value type="QString" key="CMake.Initial.Parameters">-GNinja
 -DCMAKE_BUILD_TYPE:String=RelWithDebInfo
 -DQT_QMAKE_EXECUTABLE:STRING=%{Qt:qmakeExecutable}
@@ -224,7 +218,6 @@
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">CMakeProjectManager.CMakeBuildConfiguration</value>
    </valuemap>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.BuildConfiguration.3">
-    <value type="QString" key="CMake.Build.Type">MinSizeRel</value>
     <value type="QString" key="CMake.Initial.Parameters">-GNinja
 -DCMAKE_BUILD_TYPE:String=MinSizeRel
 -DQT_QMAKE_EXECUTABLE:STRING=%{Qt:qmakeExecutable}
@@ -303,7 +296,6 @@
     <value type="QString" key="Analyzer.QmlProfiler.LastTraceFile"></value>
     <value type="bool" key="Analyzer.QmlProfiler.Settings.UseGlobalSettings">true</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.AddedSuppressionFiles"/>
-    <value type="QString" key="Analyzer.Valgrind.Callgrind.Arguments"></value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectBusEvents">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectSystime">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.EnableBranchSim">false</value>
@@ -314,14 +306,12 @@
     <value type="bool" key="Analyzer.Valgrind.FilterExternalIssues">true</value>
     <value type="QString" key="Analyzer.Valgrind.KCachegrindExecutable">kcachegrind</value>
     <value type="int" key="Analyzer.Valgrind.LeakCheckOnFinish">1</value>
-    <value type="QString" key="Analyzer.Valgrind.Memcheck.Arguments"></value>
     <value type="int" key="Analyzer.Valgrind.NumCallers">25</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.RemovedSuppressionFiles"/>
     <value type="int" key="Analyzer.Valgrind.SelfModifyingCodeDetection">1</value>
     <value type="bool" key="Analyzer.Valgrind.Settings.UseGlobalSettings">true</value>
     <value type="bool" key="Analyzer.Valgrind.ShowReachable">false</value>
     <value type="bool" key="Analyzer.Valgrind.TrackOrigins">true</value>
-    <value type="QString" key="Analyzer.Valgrind.ValgrindArguments"></value>
     <value type="QString" key="Analyzer.Valgrind.ValgrindExecutable">valgrind</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.VisibleErrorKinds">
      <value type="int">0</value>
@@ -377,7 +367,6 @@
     <value type="QString" key="Analyzer.QmlProfiler.LastTraceFile"></value>
     <value type="bool" key="Analyzer.QmlProfiler.Settings.UseGlobalSettings">true</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.AddedSuppressionFiles"/>
-    <value type="QString" key="Analyzer.Valgrind.Callgrind.Arguments"></value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectBusEvents">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectSystime">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.EnableBranchSim">false</value>
@@ -388,14 +377,12 @@
     <value type="bool" key="Analyzer.Valgrind.FilterExternalIssues">true</value>
     <value type="QString" key="Analyzer.Valgrind.KCachegrindExecutable">kcachegrind</value>
     <value type="int" key="Analyzer.Valgrind.LeakCheckOnFinish">1</value>
-    <value type="QString" key="Analyzer.Valgrind.Memcheck.Arguments"></value>
     <value type="int" key="Analyzer.Valgrind.NumCallers">25</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.RemovedSuppressionFiles"/>
     <value type="int" key="Analyzer.Valgrind.SelfModifyingCodeDetection">1</value>
     <value type="bool" key="Analyzer.Valgrind.Settings.UseGlobalSettings">true</value>
     <value type="bool" key="Analyzer.Valgrind.ShowReachable">false</value>
     <value type="bool" key="Analyzer.Valgrind.TrackOrigins">true</value>
-    <value type="QString" key="Analyzer.Valgrind.ValgrindArguments"></value>
     <value type="QString" key="Analyzer.Valgrind.ValgrindExecutable">valgrind</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.VisibleErrorKinds">
      <value type="int">0</value>
@@ -451,7 +438,6 @@
     <value type="QString" key="Analyzer.QmlProfiler.LastTraceFile"></value>
     <value type="bool" key="Analyzer.QmlProfiler.Settings.UseGlobalSettings">true</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.AddedSuppressionFiles"/>
-    <value type="QString" key="Analyzer.Valgrind.Callgrind.Arguments"></value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectBusEvents">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectSystime">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.EnableBranchSim">false</value>
@@ -462,14 +448,12 @@
     <value type="bool" key="Analyzer.Valgrind.FilterExternalIssues">true</value>
     <value type="QString" key="Analyzer.Valgrind.KCachegrindExecutable">kcachegrind</value>
     <value type="int" key="Analyzer.Valgrind.LeakCheckOnFinish">1</value>
-    <value type="QString" key="Analyzer.Valgrind.Memcheck.Arguments"></value>
     <value type="int" key="Analyzer.Valgrind.NumCallers">25</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.RemovedSuppressionFiles"/>
     <value type="int" key="Analyzer.Valgrind.SelfModifyingCodeDetection">1</value>
     <value type="bool" key="Analyzer.Valgrind.Settings.UseGlobalSettings">true</value>
     <value type="bool" key="Analyzer.Valgrind.ShowReachable">false</value>
     <value type="bool" key="Analyzer.Valgrind.TrackOrigins">true</value>
-    <value type="QString" key="Analyzer.Valgrind.ValgrindArguments"></value>
     <value type="QString" key="Analyzer.Valgrind.ValgrindExecutable">valgrind</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.VisibleErrorKinds">
      <value type="int">0</value>
@@ -525,7 +509,6 @@
     <value type="QString" key="Analyzer.QmlProfiler.LastTraceFile"></value>
     <value type="bool" key="Analyzer.QmlProfiler.Settings.UseGlobalSettings">true</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.AddedSuppressionFiles"/>
-    <value type="QString" key="Analyzer.Valgrind.Callgrind.Arguments"></value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectBusEvents">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectSystime">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.EnableBranchSim">false</value>
@@ -536,14 +519,12 @@
     <value type="bool" key="Analyzer.Valgrind.FilterExternalIssues">true</value>
     <value type="QString" key="Analyzer.Valgrind.KCachegrindExecutable">kcachegrind</value>
     <value type="int" key="Analyzer.Valgrind.LeakCheckOnFinish">1</value>
-    <value type="QString" key="Analyzer.Valgrind.Memcheck.Arguments"></value>
     <value type="int" key="Analyzer.Valgrind.NumCallers">25</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.RemovedSuppressionFiles"/>
     <value type="int" key="Analyzer.Valgrind.SelfModifyingCodeDetection">1</value>
     <value type="bool" key="Analyzer.Valgrind.Settings.UseGlobalSettings">true</value>
     <value type="bool" key="Analyzer.Valgrind.ShowReachable">false</value>
     <value type="bool" key="Analyzer.Valgrind.TrackOrigins">true</value>
-    <value type="QString" key="Analyzer.Valgrind.ValgrindArguments"></value>
     <value type="QString" key="Analyzer.Valgrind.ValgrindExecutable">valgrind</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.VisibleErrorKinds">
      <value type="int">0</value>
@@ -599,7 +580,6 @@
     <value type="QString" key="Analyzer.QmlProfiler.LastTraceFile"></value>
     <value type="bool" key="Analyzer.QmlProfiler.Settings.UseGlobalSettings">true</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.AddedSuppressionFiles"/>
-    <value type="QString" key="Analyzer.Valgrind.Callgrind.Arguments"></value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectBusEvents">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectSystime">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.EnableBranchSim">false</value>
@@ -610,14 +590,12 @@
     <value type="bool" key="Analyzer.Valgrind.FilterExternalIssues">true</value>
     <value type="QString" key="Analyzer.Valgrind.KCachegrindExecutable">kcachegrind</value>
     <value type="int" key="Analyzer.Valgrind.LeakCheckOnFinish">1</value>
-    <value type="QString" key="Analyzer.Valgrind.Memcheck.Arguments"></value>
     <value type="int" key="Analyzer.Valgrind.NumCallers">25</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.RemovedSuppressionFiles"/>
     <value type="int" key="Analyzer.Valgrind.SelfModifyingCodeDetection">1</value>
     <value type="bool" key="Analyzer.Valgrind.Settings.UseGlobalSettings">true</value>
     <value type="bool" key="Analyzer.Valgrind.ShowReachable">false</value>
     <value type="bool" key="Analyzer.Valgrind.TrackOrigins">true</value>
-    <value type="QString" key="Analyzer.Valgrind.ValgrindArguments"></value>
     <value type="QString" key="Analyzer.Valgrind.ValgrindExecutable">valgrind</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.VisibleErrorKinds">
      <value type="int">0</value>
@@ -673,7 +651,6 @@
     <value type="QString" key="Analyzer.QmlProfiler.LastTraceFile"></value>
     <value type="bool" key="Analyzer.QmlProfiler.Settings.UseGlobalSettings">true</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.AddedSuppressionFiles"/>
-    <value type="QString" key="Analyzer.Valgrind.Callgrind.Arguments"></value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectBusEvents">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectSystime">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.EnableBranchSim">false</value>
@@ -684,14 +661,12 @@
     <value type="bool" key="Analyzer.Valgrind.FilterExternalIssues">true</value>
     <value type="QString" key="Analyzer.Valgrind.KCachegrindExecutable">kcachegrind</value>
     <value type="int" key="Analyzer.Valgrind.LeakCheckOnFinish">1</value>
-    <value type="QString" key="Analyzer.Valgrind.Memcheck.Arguments"></value>
     <value type="int" key="Analyzer.Valgrind.NumCallers">25</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.RemovedSuppressionFiles"/>
     <value type="int" key="Analyzer.Valgrind.SelfModifyingCodeDetection">1</value>
     <value type="bool" key="Analyzer.Valgrind.Settings.UseGlobalSettings">true</value>
     <value type="bool" key="Analyzer.Valgrind.ShowReachable">false</value>
     <value type="bool" key="Analyzer.Valgrind.TrackOrigins">true</value>
-    <value type="QString" key="Analyzer.Valgrind.ValgrindArguments"></value>
     <value type="QString" key="Analyzer.Valgrind.ValgrindExecutable">valgrind</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.VisibleErrorKinds">
      <value type="int">0</value>
@@ -747,7 +722,6 @@
     <value type="QString" key="Analyzer.QmlProfiler.LastTraceFile"></value>
     <value type="bool" key="Analyzer.QmlProfiler.Settings.UseGlobalSettings">true</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.AddedSuppressionFiles"/>
-    <value type="QString" key="Analyzer.Valgrind.Callgrind.Arguments"></value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectBusEvents">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectSystime">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.EnableBranchSim">false</value>
@@ -758,14 +732,12 @@
     <value type="bool" key="Analyzer.Valgrind.FilterExternalIssues">true</value>
     <value type="QString" key="Analyzer.Valgrind.KCachegrindExecutable">kcachegrind</value>
     <value type="int" key="Analyzer.Valgrind.LeakCheckOnFinish">1</value>
-    <value type="QString" key="Analyzer.Valgrind.Memcheck.Arguments"></value>
     <value type="int" key="Analyzer.Valgrind.NumCallers">25</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.RemovedSuppressionFiles"/>
     <value type="int" key="Analyzer.Valgrind.SelfModifyingCodeDetection">1</value>
     <value type="bool" key="Analyzer.Valgrind.Settings.UseGlobalSettings">true</value>
     <value type="bool" key="Analyzer.Valgrind.ShowReachable">false</value>
     <value type="bool" key="Analyzer.Valgrind.TrackOrigins">true</value>
-    <value type="QString" key="Analyzer.Valgrind.ValgrindArguments"></value>
     <value type="QString" key="Analyzer.Valgrind.ValgrindExecutable">valgrind</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.VisibleErrorKinds">
      <value type="int">0</value>
@@ -821,7 +793,6 @@
     <value type="QString" key="Analyzer.QmlProfiler.LastTraceFile"></value>
     <value type="bool" key="Analyzer.QmlProfiler.Settings.UseGlobalSettings">true</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.AddedSuppressionFiles"/>
-    <value type="QString" key="Analyzer.Valgrind.Callgrind.Arguments"></value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectBusEvents">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectSystime">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.EnableBranchSim">false</value>
@@ -832,14 +803,12 @@
     <value type="bool" key="Analyzer.Valgrind.FilterExternalIssues">true</value>
     <value type="QString" key="Analyzer.Valgrind.KCachegrindExecutable">kcachegrind</value>
     <value type="int" key="Analyzer.Valgrind.LeakCheckOnFinish">1</value>
-    <value type="QString" key="Analyzer.Valgrind.Memcheck.Arguments"></value>
     <value type="int" key="Analyzer.Valgrind.NumCallers">25</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.RemovedSuppressionFiles"/>
     <value type="int" key="Analyzer.Valgrind.SelfModifyingCodeDetection">1</value>
     <value type="bool" key="Analyzer.Valgrind.Settings.UseGlobalSettings">true</value>
     <value type="bool" key="Analyzer.Valgrind.ShowReachable">false</value>
     <value type="bool" key="Analyzer.Valgrind.TrackOrigins">true</value>
-    <value type="QString" key="Analyzer.Valgrind.ValgrindArguments"></value>
     <value type="QString" key="Analyzer.Valgrind.ValgrindExecutable">valgrind</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.VisibleErrorKinds">
      <value type="int">0</value>
@@ -895,7 +864,6 @@
     <value type="QString" key="Analyzer.QmlProfiler.LastTraceFile"></value>
     <value type="bool" key="Analyzer.QmlProfiler.Settings.UseGlobalSettings">true</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.AddedSuppressionFiles"/>
-    <value type="QString" key="Analyzer.Valgrind.Callgrind.Arguments"></value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectBusEvents">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectSystime">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.EnableBranchSim">false</value>
@@ -906,14 +874,12 @@
     <value type="bool" key="Analyzer.Valgrind.FilterExternalIssues">true</value>
     <value type="QString" key="Analyzer.Valgrind.KCachegrindExecutable">kcachegrind</value>
     <value type="int" key="Analyzer.Valgrind.LeakCheckOnFinish">1</value>
-    <value type="QString" key="Analyzer.Valgrind.Memcheck.Arguments"></value>
     <value type="int" key="Analyzer.Valgrind.NumCallers">25</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.RemovedSuppressionFiles"/>
     <value type="int" key="Analyzer.Valgrind.SelfModifyingCodeDetection">1</value>
     <value type="bool" key="Analyzer.Valgrind.Settings.UseGlobalSettings">true</value>
     <value type="bool" key="Analyzer.Valgrind.ShowReachable">false</value>
     <value type="bool" key="Analyzer.Valgrind.TrackOrigins">true</value>
-    <value type="QString" key="Analyzer.Valgrind.ValgrindArguments"></value>
     <value type="QString" key="Analyzer.Valgrind.ValgrindExecutable">valgrind</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.VisibleErrorKinds">
      <value type="int">0</value>
@@ -969,7 +935,6 @@
     <value type="QString" key="Analyzer.QmlProfiler.LastTraceFile"></value>
     <value type="bool" key="Analyzer.QmlProfiler.Settings.UseGlobalSettings">true</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.AddedSuppressionFiles"/>
-    <value type="QString" key="Analyzer.Valgrind.Callgrind.Arguments"></value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectBusEvents">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectSystime">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.EnableBranchSim">false</value>
@@ -980,14 +945,12 @@
     <value type="bool" key="Analyzer.Valgrind.FilterExternalIssues">true</value>
     <value type="QString" key="Analyzer.Valgrind.KCachegrindExecutable">kcachegrind</value>
     <value type="int" key="Analyzer.Valgrind.LeakCheckOnFinish">1</value>
-    <value type="QString" key="Analyzer.Valgrind.Memcheck.Arguments"></value>
     <value type="int" key="Analyzer.Valgrind.NumCallers">25</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.RemovedSuppressionFiles"/>
     <value type="int" key="Analyzer.Valgrind.SelfModifyingCodeDetection">1</value>
     <value type="bool" key="Analyzer.Valgrind.Settings.UseGlobalSettings">true</value>
     <value type="bool" key="Analyzer.Valgrind.ShowReachable">false</value>
     <value type="bool" key="Analyzer.Valgrind.TrackOrigins">true</value>
-    <value type="QString" key="Analyzer.Valgrind.ValgrindArguments"></value>
     <value type="QString" key="Analyzer.Valgrind.ValgrindExecutable">valgrind</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.VisibleErrorKinds">
      <value type="int">0</value>
@@ -1043,7 +1006,6 @@
     <value type="QString" key="Analyzer.QmlProfiler.LastTraceFile"></value>
     <value type="bool" key="Analyzer.QmlProfiler.Settings.UseGlobalSettings">true</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.AddedSuppressionFiles"/>
-    <value type="QString" key="Analyzer.Valgrind.Callgrind.Arguments"></value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectBusEvents">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectSystime">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.EnableBranchSim">false</value>
@@ -1054,14 +1016,12 @@
     <value type="bool" key="Analyzer.Valgrind.FilterExternalIssues">true</value>
     <value type="QString" key="Analyzer.Valgrind.KCachegrindExecutable">kcachegrind</value>
     <value type="int" key="Analyzer.Valgrind.LeakCheckOnFinish">1</value>
-    <value type="QString" key="Analyzer.Valgrind.Memcheck.Arguments"></value>
     <value type="int" key="Analyzer.Valgrind.NumCallers">25</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.RemovedSuppressionFiles"/>
     <value type="int" key="Analyzer.Valgrind.SelfModifyingCodeDetection">1</value>
     <value type="bool" key="Analyzer.Valgrind.Settings.UseGlobalSettings">true</value>
     <value type="bool" key="Analyzer.Valgrind.ShowReachable">false</value>
     <value type="bool" key="Analyzer.Valgrind.TrackOrigins">true</value>
-    <value type="QString" key="Analyzer.Valgrind.ValgrindArguments"></value>
     <value type="QString" key="Analyzer.Valgrind.ValgrindExecutable">valgrind</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.VisibleErrorKinds">
      <value type="int">0</value>
@@ -1117,7 +1077,6 @@
     <value type="QString" key="Analyzer.QmlProfiler.LastTraceFile"></value>
     <value type="bool" key="Analyzer.QmlProfiler.Settings.UseGlobalSettings">true</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.AddedSuppressionFiles"/>
-    <value type="QString" key="Analyzer.Valgrind.Callgrind.Arguments"></value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectBusEvents">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectSystime">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.EnableBranchSim">false</value>
@@ -1128,14 +1087,12 @@
     <value type="bool" key="Analyzer.Valgrind.FilterExternalIssues">true</value>
     <value type="QString" key="Analyzer.Valgrind.KCachegrindExecutable">kcachegrind</value>
     <value type="int" key="Analyzer.Valgrind.LeakCheckOnFinish">1</value>
-    <value type="QString" key="Analyzer.Valgrind.Memcheck.Arguments"></value>
     <value type="int" key="Analyzer.Valgrind.NumCallers">25</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.RemovedSuppressionFiles"/>
     <value type="int" key="Analyzer.Valgrind.SelfModifyingCodeDetection">1</value>
     <value type="bool" key="Analyzer.Valgrind.Settings.UseGlobalSettings">true</value>
     <value type="bool" key="Analyzer.Valgrind.ShowReachable">false</value>
     <value type="bool" key="Analyzer.Valgrind.TrackOrigins">true</value>
-    <value type="QString" key="Analyzer.Valgrind.ValgrindArguments"></value>
     <value type="QString" key="Analyzer.Valgrind.ValgrindExecutable">valgrind</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.VisibleErrorKinds">
      <value type="int">0</value>
@@ -1191,7 +1148,6 @@
     <value type="QString" key="Analyzer.QmlProfiler.LastTraceFile"></value>
     <value type="bool" key="Analyzer.QmlProfiler.Settings.UseGlobalSettings">true</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.AddedSuppressionFiles"/>
-    <value type="QString" key="Analyzer.Valgrind.Callgrind.Arguments"></value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectBusEvents">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectSystime">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.EnableBranchSim">false</value>
@@ -1202,14 +1158,12 @@
     <value type="bool" key="Analyzer.Valgrind.FilterExternalIssues">true</value>
     <value type="QString" key="Analyzer.Valgrind.KCachegrindExecutable">kcachegrind</value>
     <value type="int" key="Analyzer.Valgrind.LeakCheckOnFinish">1</value>
-    <value type="QString" key="Analyzer.Valgrind.Memcheck.Arguments"></value>
     <value type="int" key="Analyzer.Valgrind.NumCallers">25</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.RemovedSuppressionFiles"/>
     <value type="int" key="Analyzer.Valgrind.SelfModifyingCodeDetection">1</value>
     <value type="bool" key="Analyzer.Valgrind.Settings.UseGlobalSettings">true</value>
     <value type="bool" key="Analyzer.Valgrind.ShowReachable">false</value>
     <value type="bool" key="Analyzer.Valgrind.TrackOrigins">true</value>
-    <value type="QString" key="Analyzer.Valgrind.ValgrindArguments"></value>
     <value type="QString" key="Analyzer.Valgrind.ValgrindExecutable">valgrind</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.VisibleErrorKinds">
      <value type="int">0</value>
@@ -1265,7 +1219,6 @@
     <value type="QString" key="Analyzer.QmlProfiler.LastTraceFile"></value>
     <value type="bool" key="Analyzer.QmlProfiler.Settings.UseGlobalSettings">true</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.AddedSuppressionFiles"/>
-    <value type="QString" key="Analyzer.Valgrind.Callgrind.Arguments"></value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectBusEvents">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectSystime">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.EnableBranchSim">false</value>
@@ -1276,14 +1229,12 @@
     <value type="bool" key="Analyzer.Valgrind.FilterExternalIssues">true</value>
     <value type="QString" key="Analyzer.Valgrind.KCachegrindExecutable">kcachegrind</value>
     <value type="int" key="Analyzer.Valgrind.LeakCheckOnFinish">1</value>
-    <value type="QString" key="Analyzer.Valgrind.Memcheck.Arguments"></value>
     <value type="int" key="Analyzer.Valgrind.NumCallers">25</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.RemovedSuppressionFiles"/>
     <value type="int" key="Analyzer.Valgrind.SelfModifyingCodeDetection">1</value>
     <value type="bool" key="Analyzer.Valgrind.Settings.UseGlobalSettings">true</value>
     <value type="bool" key="Analyzer.Valgrind.ShowReachable">false</value>
     <value type="bool" key="Analyzer.Valgrind.TrackOrigins">true</value>
-    <value type="QString" key="Analyzer.Valgrind.ValgrindArguments"></value>
     <value type="QString" key="Analyzer.Valgrind.ValgrindExecutable">valgrind</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.VisibleErrorKinds">
      <value type="int">0</value>
@@ -1339,7 +1290,6 @@
     <value type="QString" key="Analyzer.QmlProfiler.LastTraceFile"></value>
     <value type="bool" key="Analyzer.QmlProfiler.Settings.UseGlobalSettings">true</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.AddedSuppressionFiles"/>
-    <value type="QString" key="Analyzer.Valgrind.Callgrind.Arguments"></value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectBusEvents">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectSystime">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.EnableBranchSim">false</value>
@@ -1350,14 +1300,12 @@
     <value type="bool" key="Analyzer.Valgrind.FilterExternalIssues">true</value>
     <value type="QString" key="Analyzer.Valgrind.KCachegrindExecutable">kcachegrind</value>
     <value type="int" key="Analyzer.Valgrind.LeakCheckOnFinish">1</value>
-    <value type="QString" key="Analyzer.Valgrind.Memcheck.Arguments"></value>
     <value type="int" key="Analyzer.Valgrind.NumCallers">25</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.RemovedSuppressionFiles"/>
     <value type="int" key="Analyzer.Valgrind.SelfModifyingCodeDetection">1</value>
     <value type="bool" key="Analyzer.Valgrind.Settings.UseGlobalSettings">true</value>
     <value type="bool" key="Analyzer.Valgrind.ShowReachable">false</value>
     <value type="bool" key="Analyzer.Valgrind.TrackOrigins">true</value>
-    <value type="QString" key="Analyzer.Valgrind.ValgrindArguments"></value>
     <value type="QString" key="Analyzer.Valgrind.ValgrindExecutable">valgrind</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.VisibleErrorKinds">
      <value type="int">0</value>
@@ -1413,7 +1361,6 @@
     <value type="QString" key="Analyzer.QmlProfiler.LastTraceFile"></value>
     <value type="bool" key="Analyzer.QmlProfiler.Settings.UseGlobalSettings">true</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.AddedSuppressionFiles"/>
-    <value type="QString" key="Analyzer.Valgrind.Callgrind.Arguments"></value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectBusEvents">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectSystime">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.EnableBranchSim">false</value>
@@ -1424,14 +1371,12 @@
     <value type="bool" key="Analyzer.Valgrind.FilterExternalIssues">true</value>
     <value type="QString" key="Analyzer.Valgrind.KCachegrindExecutable">kcachegrind</value>
     <value type="int" key="Analyzer.Valgrind.LeakCheckOnFinish">1</value>
-    <value type="QString" key="Analyzer.Valgrind.Memcheck.Arguments"></value>
     <value type="int" key="Analyzer.Valgrind.NumCallers">25</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.RemovedSuppressionFiles"/>
     <value type="int" key="Analyzer.Valgrind.SelfModifyingCodeDetection">1</value>
     <value type="bool" key="Analyzer.Valgrind.Settings.UseGlobalSettings">true</value>
     <value type="bool" key="Analyzer.Valgrind.ShowReachable">false</value>
     <value type="bool" key="Analyzer.Valgrind.TrackOrigins">true</value>
-    <value type="QString" key="Analyzer.Valgrind.ValgrindArguments"></value>
     <value type="QString" key="Analyzer.Valgrind.ValgrindExecutable">valgrind</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.VisibleErrorKinds">
      <value type="int">0</value>
@@ -1487,7 +1432,6 @@
     <value type="QString" key="Analyzer.QmlProfiler.LastTraceFile"></value>
     <value type="bool" key="Analyzer.QmlProfiler.Settings.UseGlobalSettings">true</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.AddedSuppressionFiles"/>
-    <value type="QString" key="Analyzer.Valgrind.Callgrind.Arguments"></value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectBusEvents">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectSystime">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.EnableBranchSim">false</value>
@@ -1498,14 +1442,12 @@
     <value type="bool" key="Analyzer.Valgrind.FilterExternalIssues">true</value>
     <value type="QString" key="Analyzer.Valgrind.KCachegrindExecutable">kcachegrind</value>
     <value type="int" key="Analyzer.Valgrind.LeakCheckOnFinish">1</value>
-    <value type="QString" key="Analyzer.Valgrind.Memcheck.Arguments"></value>
     <value type="int" key="Analyzer.Valgrind.NumCallers">25</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.RemovedSuppressionFiles"/>
     <value type="int" key="Analyzer.Valgrind.SelfModifyingCodeDetection">1</value>
     <value type="bool" key="Analyzer.Valgrind.Settings.UseGlobalSettings">true</value>
     <value type="bool" key="Analyzer.Valgrind.ShowReachable">false</value>
     <value type="bool" key="Analyzer.Valgrind.TrackOrigins">true</value>
-    <value type="QString" key="Analyzer.Valgrind.ValgrindArguments"></value>
     <value type="QString" key="Analyzer.Valgrind.ValgrindExecutable">valgrind</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.VisibleErrorKinds">
      <value type="int">0</value>
@@ -1560,7 +1502,6 @@
     <value type="QString" key="Analyzer.QmlProfiler.LastTraceFile"></value>
     <value type="bool" key="Analyzer.QmlProfiler.Settings.UseGlobalSettings">true</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.AddedSuppressionFiles"/>
-    <value type="QString" key="Analyzer.Valgrind.Callgrind.Arguments"></value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectBusEvents">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectSystime">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.EnableBranchSim">false</value>
@@ -1571,14 +1512,12 @@
     <value type="bool" key="Analyzer.Valgrind.FilterExternalIssues">true</value>
     <value type="QString" key="Analyzer.Valgrind.KCachegrindExecutable">kcachegrind</value>
     <value type="int" key="Analyzer.Valgrind.LeakCheckOnFinish">1</value>
-    <value type="QString" key="Analyzer.Valgrind.Memcheck.Arguments"></value>
     <value type="int" key="Analyzer.Valgrind.NumCallers">25</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.RemovedSuppressionFiles"/>
     <value type="int" key="Analyzer.Valgrind.SelfModifyingCodeDetection">1</value>
     <value type="bool" key="Analyzer.Valgrind.Settings.UseGlobalSettings">true</value>
     <value type="bool" key="Analyzer.Valgrind.ShowReachable">false</value>
     <value type="bool" key="Analyzer.Valgrind.TrackOrigins">true</value>
-    <value type="QString" key="Analyzer.Valgrind.ValgrindArguments"></value>
     <value type="QString" key="Analyzer.Valgrind.ValgrindExecutable">valgrind</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.VisibleErrorKinds">
      <value type="int">0</value>
@@ -1633,7 +1572,6 @@
     <value type="QString" key="Analyzer.QmlProfiler.LastTraceFile"></value>
     <value type="bool" key="Analyzer.QmlProfiler.Settings.UseGlobalSettings">true</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.AddedSuppressionFiles"/>
-    <value type="QString" key="Analyzer.Valgrind.Callgrind.Arguments"></value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectBusEvents">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectSystime">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.EnableBranchSim">false</value>
@@ -1644,14 +1582,12 @@
     <value type="bool" key="Analyzer.Valgrind.FilterExternalIssues">true</value>
     <value type="QString" key="Analyzer.Valgrind.KCachegrindExecutable">kcachegrind</value>
     <value type="int" key="Analyzer.Valgrind.LeakCheckOnFinish">1</value>
-    <value type="QString" key="Analyzer.Valgrind.Memcheck.Arguments"></value>
     <value type="int" key="Analyzer.Valgrind.NumCallers">25</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.RemovedSuppressionFiles"/>
     <value type="int" key="Analyzer.Valgrind.SelfModifyingCodeDetection">1</value>
     <value type="bool" key="Analyzer.Valgrind.Settings.UseGlobalSettings">true</value>
     <value type="bool" key="Analyzer.Valgrind.ShowReachable">false</value>
     <value type="bool" key="Analyzer.Valgrind.TrackOrigins">true</value>
-    <value type="QString" key="Analyzer.Valgrind.ValgrindArguments"></value>
     <value type="QString" key="Analyzer.Valgrind.ValgrindExecutable">valgrind</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.VisibleErrorKinds">
      <value type="int">0</value>
@@ -1706,7 +1642,6 @@
     <value type="QString" key="Analyzer.QmlProfiler.LastTraceFile"></value>
     <value type="bool" key="Analyzer.QmlProfiler.Settings.UseGlobalSettings">true</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.AddedSuppressionFiles"/>
-    <value type="QString" key="Analyzer.Valgrind.Callgrind.Arguments"></value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectBusEvents">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectSystime">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.EnableBranchSim">false</value>
@@ -1717,14 +1652,12 @@
     <value type="bool" key="Analyzer.Valgrind.FilterExternalIssues">true</value>
     <value type="QString" key="Analyzer.Valgrind.KCachegrindExecutable">kcachegrind</value>
     <value type="int" key="Analyzer.Valgrind.LeakCheckOnFinish">1</value>
-    <value type="QString" key="Analyzer.Valgrind.Memcheck.Arguments"></value>
     <value type="int" key="Analyzer.Valgrind.NumCallers">25</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.RemovedSuppressionFiles"/>
     <value type="int" key="Analyzer.Valgrind.SelfModifyingCodeDetection">1</value>
     <value type="bool" key="Analyzer.Valgrind.Settings.UseGlobalSettings">true</value>
     <value type="bool" key="Analyzer.Valgrind.ShowReachable">false</value>
     <value type="bool" key="Analyzer.Valgrind.TrackOrigins">true</value>
-    <value type="QString" key="Analyzer.Valgrind.ValgrindArguments"></value>
     <value type="QString" key="Analyzer.Valgrind.ValgrindExecutable">valgrind</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.VisibleErrorKinds">
      <value type="int">0</value>
@@ -1779,7 +1712,6 @@
     <value type="QString" key="Analyzer.QmlProfiler.LastTraceFile"></value>
     <value type="bool" key="Analyzer.QmlProfiler.Settings.UseGlobalSettings">true</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.AddedSuppressionFiles"/>
-    <value type="QString" key="Analyzer.Valgrind.Callgrind.Arguments"></value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectBusEvents">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectSystime">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.EnableBranchSim">false</value>
@@ -1790,14 +1722,12 @@
     <value type="bool" key="Analyzer.Valgrind.FilterExternalIssues">true</value>
     <value type="QString" key="Analyzer.Valgrind.KCachegrindExecutable">kcachegrind</value>
     <value type="int" key="Analyzer.Valgrind.LeakCheckOnFinish">1</value>
-    <value type="QString" key="Analyzer.Valgrind.Memcheck.Arguments"></value>
     <value type="int" key="Analyzer.Valgrind.NumCallers">25</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.RemovedSuppressionFiles"/>
     <value type="int" key="Analyzer.Valgrind.SelfModifyingCodeDetection">1</value>
     <value type="bool" key="Analyzer.Valgrind.Settings.UseGlobalSettings">true</value>
     <value type="bool" key="Analyzer.Valgrind.ShowReachable">false</value>
     <value type="bool" key="Analyzer.Valgrind.TrackOrigins">true</value>
-    <value type="QString" key="Analyzer.Valgrind.ValgrindArguments"></value>
     <value type="QString" key="Analyzer.Valgrind.ValgrindExecutable">valgrind</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.VisibleErrorKinds">
      <value type="int">0</value>
@@ -1852,7 +1782,6 @@
     <value type="QString" key="Analyzer.QmlProfiler.LastTraceFile"></value>
     <value type="bool" key="Analyzer.QmlProfiler.Settings.UseGlobalSettings">true</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.AddedSuppressionFiles"/>
-    <value type="QString" key="Analyzer.Valgrind.Callgrind.Arguments"></value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectBusEvents">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectSystime">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.EnableBranchSim">false</value>
@@ -1863,14 +1792,12 @@
     <value type="bool" key="Analyzer.Valgrind.FilterExternalIssues">true</value>
     <value type="QString" key="Analyzer.Valgrind.KCachegrindExecutable">kcachegrind</value>
     <value type="int" key="Analyzer.Valgrind.LeakCheckOnFinish">1</value>
-    <value type="QString" key="Analyzer.Valgrind.Memcheck.Arguments"></value>
     <value type="int" key="Analyzer.Valgrind.NumCallers">25</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.RemovedSuppressionFiles"/>
     <value type="int" key="Analyzer.Valgrind.SelfModifyingCodeDetection">1</value>
     <value type="bool" key="Analyzer.Valgrind.Settings.UseGlobalSettings">true</value>
     <value type="bool" key="Analyzer.Valgrind.ShowReachable">false</value>
     <value type="bool" key="Analyzer.Valgrind.TrackOrigins">true</value>
-    <value type="QString" key="Analyzer.Valgrind.ValgrindArguments"></value>
     <value type="QString" key="Analyzer.Valgrind.ValgrindExecutable">valgrind</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.VisibleErrorKinds">
      <value type="int">0</value>
@@ -1925,7 +1852,6 @@
     <value type="QString" key="Analyzer.QmlProfiler.LastTraceFile"></value>
     <value type="bool" key="Analyzer.QmlProfiler.Settings.UseGlobalSettings">true</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.AddedSuppressionFiles"/>
-    <value type="QString" key="Analyzer.Valgrind.Callgrind.Arguments"></value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectBusEvents">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectSystime">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.EnableBranchSim">false</value>
@@ -1936,14 +1862,12 @@
     <value type="bool" key="Analyzer.Valgrind.FilterExternalIssues">true</value>
     <value type="QString" key="Analyzer.Valgrind.KCachegrindExecutable">kcachegrind</value>
     <value type="int" key="Analyzer.Valgrind.LeakCheckOnFinish">1</value>
-    <value type="QString" key="Analyzer.Valgrind.Memcheck.Arguments"></value>
     <value type="int" key="Analyzer.Valgrind.NumCallers">25</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.RemovedSuppressionFiles"/>
     <value type="int" key="Analyzer.Valgrind.SelfModifyingCodeDetection">1</value>
     <value type="bool" key="Analyzer.Valgrind.Settings.UseGlobalSettings">true</value>
     <value type="bool" key="Analyzer.Valgrind.ShowReachable">false</value>
     <value type="bool" key="Analyzer.Valgrind.TrackOrigins">true</value>
-    <value type="QString" key="Analyzer.Valgrind.ValgrindArguments"></value>
     <value type="QString" key="Analyzer.Valgrind.ValgrindExecutable">valgrind</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.VisibleErrorKinds">
      <value type="int">0</value>
@@ -1998,7 +1922,6 @@
     <value type="QString" key="Analyzer.QmlProfiler.LastTraceFile"></value>
     <value type="bool" key="Analyzer.QmlProfiler.Settings.UseGlobalSettings">true</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.AddedSuppressionFiles"/>
-    <value type="QString" key="Analyzer.Valgrind.Callgrind.Arguments"></value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectBusEvents">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectSystime">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.EnableBranchSim">false</value>
@@ -2009,14 +1932,12 @@
     <value type="bool" key="Analyzer.Valgrind.FilterExternalIssues">true</value>
     <value type="QString" key="Analyzer.Valgrind.KCachegrindExecutable">kcachegrind</value>
     <value type="int" key="Analyzer.Valgrind.LeakCheckOnFinish">1</value>
-    <value type="QString" key="Analyzer.Valgrind.Memcheck.Arguments"></value>
     <value type="int" key="Analyzer.Valgrind.NumCallers">25</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.RemovedSuppressionFiles"/>
     <value type="int" key="Analyzer.Valgrind.SelfModifyingCodeDetection">1</value>
     <value type="bool" key="Analyzer.Valgrind.Settings.UseGlobalSettings">true</value>
     <value type="bool" key="Analyzer.Valgrind.ShowReachable">false</value>
     <value type="bool" key="Analyzer.Valgrind.TrackOrigins">true</value>
-    <value type="QString" key="Analyzer.Valgrind.ValgrindArguments"></value>
     <value type="QString" key="Analyzer.Valgrind.ValgrindExecutable">valgrind</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.VisibleErrorKinds">
      <value type="int">0</value>
@@ -2072,7 +1993,6 @@
     <value type="QString" key="Analyzer.QmlProfiler.LastTraceFile"></value>
     <value type="bool" key="Analyzer.QmlProfiler.Settings.UseGlobalSettings">true</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.AddedSuppressionFiles"/>
-    <value type="QString" key="Analyzer.Valgrind.Callgrind.Arguments"></value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectBusEvents">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectSystime">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.EnableBranchSim">false</value>
@@ -2083,14 +2003,12 @@
     <value type="bool" key="Analyzer.Valgrind.FilterExternalIssues">true</value>
     <value type="QString" key="Analyzer.Valgrind.KCachegrindExecutable">kcachegrind</value>
     <value type="int" key="Analyzer.Valgrind.LeakCheckOnFinish">1</value>
-    <value type="QString" key="Analyzer.Valgrind.Memcheck.Arguments"></value>
     <value type="int" key="Analyzer.Valgrind.NumCallers">25</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.RemovedSuppressionFiles"/>
     <value type="int" key="Analyzer.Valgrind.SelfModifyingCodeDetection">1</value>
     <value type="bool" key="Analyzer.Valgrind.Settings.UseGlobalSettings">true</value>
     <value type="bool" key="Analyzer.Valgrind.ShowReachable">false</value>
     <value type="bool" key="Analyzer.Valgrind.TrackOrigins">true</value>
-    <value type="QString" key="Analyzer.Valgrind.ValgrindArguments"></value>
     <value type="QString" key="Analyzer.Valgrind.ValgrindExecutable">valgrind</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.VisibleErrorKinds">
      <value type="int">0</value>
@@ -2145,7 +2063,6 @@
     <value type="QString" key="Analyzer.QmlProfiler.LastTraceFile"></value>
     <value type="bool" key="Analyzer.QmlProfiler.Settings.UseGlobalSettings">true</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.AddedSuppressionFiles"/>
-    <value type="QString" key="Analyzer.Valgrind.Callgrind.Arguments"></value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectBusEvents">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectSystime">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.EnableBranchSim">false</value>
@@ -2156,14 +2073,12 @@
     <value type="bool" key="Analyzer.Valgrind.FilterExternalIssues">true</value>
     <value type="QString" key="Analyzer.Valgrind.KCachegrindExecutable">kcachegrind</value>
     <value type="int" key="Analyzer.Valgrind.LeakCheckOnFinish">1</value>
-    <value type="QString" key="Analyzer.Valgrind.Memcheck.Arguments"></value>
     <value type="int" key="Analyzer.Valgrind.NumCallers">25</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.RemovedSuppressionFiles"/>
     <value type="int" key="Analyzer.Valgrind.SelfModifyingCodeDetection">1</value>
     <value type="bool" key="Analyzer.Valgrind.Settings.UseGlobalSettings">true</value>
     <value type="bool" key="Analyzer.Valgrind.ShowReachable">false</value>
     <value type="bool" key="Analyzer.Valgrind.TrackOrigins">true</value>
-    <value type="QString" key="Analyzer.Valgrind.ValgrindArguments"></value>
     <value type="QString" key="Analyzer.Valgrind.ValgrindExecutable">valgrind</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.VisibleErrorKinds">
      <value type="int">0</value>
@@ -2218,7 +2133,6 @@
     <value type="QString" key="Analyzer.QmlProfiler.LastTraceFile"></value>
     <value type="bool" key="Analyzer.QmlProfiler.Settings.UseGlobalSettings">true</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.AddedSuppressionFiles"/>
-    <value type="QString" key="Analyzer.Valgrind.Callgrind.Arguments"></value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectBusEvents">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectSystime">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.EnableBranchSim">false</value>
@@ -2229,14 +2143,12 @@
     <value type="bool" key="Analyzer.Valgrind.FilterExternalIssues">true</value>
     <value type="QString" key="Analyzer.Valgrind.KCachegrindExecutable">kcachegrind</value>
     <value type="int" key="Analyzer.Valgrind.LeakCheckOnFinish">1</value>
-    <value type="QString" key="Analyzer.Valgrind.Memcheck.Arguments"></value>
     <value type="int" key="Analyzer.Valgrind.NumCallers">25</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.RemovedSuppressionFiles"/>
     <value type="int" key="Analyzer.Valgrind.SelfModifyingCodeDetection">1</value>
     <value type="bool" key="Analyzer.Valgrind.Settings.UseGlobalSettings">true</value>
     <value type="bool" key="Analyzer.Valgrind.ShowReachable">false</value>
     <value type="bool" key="Analyzer.Valgrind.TrackOrigins">true</value>
-    <value type="QString" key="Analyzer.Valgrind.ValgrindArguments"></value>
     <value type="QString" key="Analyzer.Valgrind.ValgrindExecutable">valgrind</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.VisibleErrorKinds">
      <value type="int">0</value>
@@ -2291,7 +2203,6 @@
     <value type="QString" key="Analyzer.QmlProfiler.LastTraceFile"></value>
     <value type="bool" key="Analyzer.QmlProfiler.Settings.UseGlobalSettings">true</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.AddedSuppressionFiles"/>
-    <value type="QString" key="Analyzer.Valgrind.Callgrind.Arguments"></value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectBusEvents">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectSystime">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.EnableBranchSim">false</value>
@@ -2302,14 +2213,12 @@
     <value type="bool" key="Analyzer.Valgrind.FilterExternalIssues">true</value>
     <value type="QString" key="Analyzer.Valgrind.KCachegrindExecutable">kcachegrind</value>
     <value type="int" key="Analyzer.Valgrind.LeakCheckOnFinish">1</value>
-    <value type="QString" key="Analyzer.Valgrind.Memcheck.Arguments"></value>
     <value type="int" key="Analyzer.Valgrind.NumCallers">25</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.RemovedSuppressionFiles"/>
     <value type="int" key="Analyzer.Valgrind.SelfModifyingCodeDetection">1</value>
     <value type="bool" key="Analyzer.Valgrind.Settings.UseGlobalSettings">true</value>
     <value type="bool" key="Analyzer.Valgrind.ShowReachable">false</value>
     <value type="bool" key="Analyzer.Valgrind.TrackOrigins">true</value>
-    <value type="QString" key="Analyzer.Valgrind.ValgrindArguments"></value>
     <value type="QString" key="Analyzer.Valgrind.ValgrindExecutable">valgrind</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.VisibleErrorKinds">
      <value type="int">0</value>
@@ -2364,7 +2273,6 @@
     <value type="QString" key="Analyzer.QmlProfiler.LastTraceFile"></value>
     <value type="bool" key="Analyzer.QmlProfiler.Settings.UseGlobalSettings">true</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.AddedSuppressionFiles"/>
-    <value type="QString" key="Analyzer.Valgrind.Callgrind.Arguments"></value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectBusEvents">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectSystime">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.EnableBranchSim">false</value>
@@ -2375,14 +2283,12 @@
     <value type="bool" key="Analyzer.Valgrind.FilterExternalIssues">true</value>
     <value type="QString" key="Analyzer.Valgrind.KCachegrindExecutable">kcachegrind</value>
     <value type="int" key="Analyzer.Valgrind.LeakCheckOnFinish">1</value>
-    <value type="QString" key="Analyzer.Valgrind.Memcheck.Arguments"></value>
     <value type="int" key="Analyzer.Valgrind.NumCallers">25</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.RemovedSuppressionFiles"/>
     <value type="int" key="Analyzer.Valgrind.SelfModifyingCodeDetection">1</value>
     <value type="bool" key="Analyzer.Valgrind.Settings.UseGlobalSettings">true</value>
     <value type="bool" key="Analyzer.Valgrind.ShowReachable">false</value>
     <value type="bool" key="Analyzer.Valgrind.TrackOrigins">true</value>
-    <value type="QString" key="Analyzer.Valgrind.ValgrindArguments"></value>
     <value type="QString" key="Analyzer.Valgrind.ValgrindExecutable">valgrind</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.VisibleErrorKinds">
      <value type="int">0</value>
@@ -2437,7 +2343,6 @@
     <value type="QString" key="Analyzer.QmlProfiler.LastTraceFile"></value>
     <value type="bool" key="Analyzer.QmlProfiler.Settings.UseGlobalSettings">true</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.AddedSuppressionFiles"/>
-    <value type="QString" key="Analyzer.Valgrind.Callgrind.Arguments"></value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectBusEvents">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectSystime">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.EnableBranchSim">false</value>
@@ -2448,14 +2353,12 @@
     <value type="bool" key="Analyzer.Valgrind.FilterExternalIssues">true</value>
     <value type="QString" key="Analyzer.Valgrind.KCachegrindExecutable">kcachegrind</value>
     <value type="int" key="Analyzer.Valgrind.LeakCheckOnFinish">1</value>
-    <value type="QString" key="Analyzer.Valgrind.Memcheck.Arguments"></value>
     <value type="int" key="Analyzer.Valgrind.NumCallers">25</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.RemovedSuppressionFiles"/>
     <value type="int" key="Analyzer.Valgrind.SelfModifyingCodeDetection">1</value>
     <value type="bool" key="Analyzer.Valgrind.Settings.UseGlobalSettings">true</value>
     <value type="bool" key="Analyzer.Valgrind.ShowReachable">false</value>
     <value type="bool" key="Analyzer.Valgrind.TrackOrigins">true</value>
-    <value type="QString" key="Analyzer.Valgrind.ValgrindArguments"></value>
     <value type="QString" key="Analyzer.Valgrind.ValgrindExecutable">valgrind</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.VisibleErrorKinds">
      <value type="int">0</value>
@@ -2510,7 +2413,6 @@
     <value type="QString" key="Analyzer.QmlProfiler.LastTraceFile"></value>
     <value type="bool" key="Analyzer.QmlProfiler.Settings.UseGlobalSettings">true</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.AddedSuppressionFiles"/>
-    <value type="QString" key="Analyzer.Valgrind.Callgrind.Arguments"></value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectBusEvents">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectSystime">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.EnableBranchSim">false</value>
@@ -2521,14 +2423,12 @@
     <value type="bool" key="Analyzer.Valgrind.FilterExternalIssues">true</value>
     <value type="QString" key="Analyzer.Valgrind.KCachegrindExecutable">kcachegrind</value>
     <value type="int" key="Analyzer.Valgrind.LeakCheckOnFinish">1</value>
-    <value type="QString" key="Analyzer.Valgrind.Memcheck.Arguments"></value>
     <value type="int" key="Analyzer.Valgrind.NumCallers">25</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.RemovedSuppressionFiles"/>
     <value type="int" key="Analyzer.Valgrind.SelfModifyingCodeDetection">1</value>
     <value type="bool" key="Analyzer.Valgrind.Settings.UseGlobalSettings">true</value>
     <value type="bool" key="Analyzer.Valgrind.ShowReachable">false</value>
     <value type="bool" key="Analyzer.Valgrind.TrackOrigins">true</value>
-    <value type="QString" key="Analyzer.Valgrind.ValgrindArguments"></value>
     <value type="QString" key="Analyzer.Valgrind.ValgrindExecutable">valgrind</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.VisibleErrorKinds">
      <value type="int">0</value>
@@ -2583,7 +2483,6 @@
     <value type="QString" key="Analyzer.QmlProfiler.LastTraceFile"></value>
     <value type="bool" key="Analyzer.QmlProfiler.Settings.UseGlobalSettings">true</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.AddedSuppressionFiles"/>
-    <value type="QString" key="Analyzer.Valgrind.Callgrind.Arguments"></value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectBusEvents">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectSystime">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.EnableBranchSim">false</value>
@@ -2594,14 +2493,12 @@
     <value type="bool" key="Analyzer.Valgrind.FilterExternalIssues">true</value>
     <value type="QString" key="Analyzer.Valgrind.KCachegrindExecutable">kcachegrind</value>
     <value type="int" key="Analyzer.Valgrind.LeakCheckOnFinish">1</value>
-    <value type="QString" key="Analyzer.Valgrind.Memcheck.Arguments"></value>
     <value type="int" key="Analyzer.Valgrind.NumCallers">25</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.RemovedSuppressionFiles"/>
     <value type="int" key="Analyzer.Valgrind.SelfModifyingCodeDetection">1</value>
     <value type="bool" key="Analyzer.Valgrind.Settings.UseGlobalSettings">true</value>
     <value type="bool" key="Analyzer.Valgrind.ShowReachable">false</value>
     <value type="bool" key="Analyzer.Valgrind.TrackOrigins">true</value>
-    <value type="QString" key="Analyzer.Valgrind.ValgrindArguments"></value>
     <value type="QString" key="Analyzer.Valgrind.ValgrindExecutable">valgrind</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.VisibleErrorKinds">
      <value type="int">0</value>
@@ -2656,7 +2553,6 @@
     <value type="QString" key="Analyzer.QmlProfiler.LastTraceFile"></value>
     <value type="bool" key="Analyzer.QmlProfiler.Settings.UseGlobalSettings">true</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.AddedSuppressionFiles"/>
-    <value type="QString" key="Analyzer.Valgrind.Callgrind.Arguments"></value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectBusEvents">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectSystime">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.EnableBranchSim">false</value>
@@ -2667,14 +2563,12 @@
     <value type="bool" key="Analyzer.Valgrind.FilterExternalIssues">true</value>
     <value type="QString" key="Analyzer.Valgrind.KCachegrindExecutable">kcachegrind</value>
     <value type="int" key="Analyzer.Valgrind.LeakCheckOnFinish">1</value>
-    <value type="QString" key="Analyzer.Valgrind.Memcheck.Arguments"></value>
     <value type="int" key="Analyzer.Valgrind.NumCallers">25</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.RemovedSuppressionFiles"/>
     <value type="int" key="Analyzer.Valgrind.SelfModifyingCodeDetection">1</value>
     <value type="bool" key="Analyzer.Valgrind.Settings.UseGlobalSettings">true</value>
     <value type="bool" key="Analyzer.Valgrind.ShowReachable">false</value>
     <value type="bool" key="Analyzer.Valgrind.TrackOrigins">true</value>
-    <value type="QString" key="Analyzer.Valgrind.ValgrindArguments"></value>
     <value type="QString" key="Analyzer.Valgrind.ValgrindExecutable">valgrind</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.VisibleErrorKinds">
      <value type="int">0</value>
@@ -2729,7 +2623,6 @@
     <value type="QString" key="Analyzer.QmlProfiler.LastTraceFile"></value>
     <value type="bool" key="Analyzer.QmlProfiler.Settings.UseGlobalSettings">true</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.AddedSuppressionFiles"/>
-    <value type="QString" key="Analyzer.Valgrind.Callgrind.Arguments"></value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectBusEvents">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectSystime">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.EnableBranchSim">false</value>
@@ -2740,14 +2633,12 @@
     <value type="bool" key="Analyzer.Valgrind.FilterExternalIssues">true</value>
     <value type="QString" key="Analyzer.Valgrind.KCachegrindExecutable">kcachegrind</value>
     <value type="int" key="Analyzer.Valgrind.LeakCheckOnFinish">1</value>
-    <value type="QString" key="Analyzer.Valgrind.Memcheck.Arguments"></value>
     <value type="int" key="Analyzer.Valgrind.NumCallers">25</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.RemovedSuppressionFiles"/>
     <value type="int" key="Analyzer.Valgrind.SelfModifyingCodeDetection">1</value>
     <value type="bool" key="Analyzer.Valgrind.Settings.UseGlobalSettings">true</value>
     <value type="bool" key="Analyzer.Valgrind.ShowReachable">false</value>
     <value type="bool" key="Analyzer.Valgrind.TrackOrigins">true</value>
-    <value type="QString" key="Analyzer.Valgrind.ValgrindArguments"></value>
     <value type="QString" key="Analyzer.Valgrind.ValgrindExecutable">valgrind</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.VisibleErrorKinds">
      <value type="int">0</value>
@@ -2802,7 +2693,6 @@
     <value type="QString" key="Analyzer.QmlProfiler.LastTraceFile"></value>
     <value type="bool" key="Analyzer.QmlProfiler.Settings.UseGlobalSettings">true</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.AddedSuppressionFiles"/>
-    <value type="QString" key="Analyzer.Valgrind.Callgrind.Arguments"></value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectBusEvents">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectSystime">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.EnableBranchSim">false</value>
@@ -2813,14 +2703,12 @@
     <value type="bool" key="Analyzer.Valgrind.FilterExternalIssues">true</value>
     <value type="QString" key="Analyzer.Valgrind.KCachegrindExecutable">kcachegrind</value>
     <value type="int" key="Analyzer.Valgrind.LeakCheckOnFinish">1</value>
-    <value type="QString" key="Analyzer.Valgrind.Memcheck.Arguments"></value>
     <value type="int" key="Analyzer.Valgrind.NumCallers">25</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.RemovedSuppressionFiles"/>
     <value type="int" key="Analyzer.Valgrind.SelfModifyingCodeDetection">1</value>
     <value type="bool" key="Analyzer.Valgrind.Settings.UseGlobalSettings">true</value>
     <value type="bool" key="Analyzer.Valgrind.ShowReachable">false</value>
     <value type="bool" key="Analyzer.Valgrind.TrackOrigins">true</value>
-    <value type="QString" key="Analyzer.Valgrind.ValgrindArguments"></value>
     <value type="QString" key="Analyzer.Valgrind.ValgrindExecutable">valgrind</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.VisibleErrorKinds">
      <value type="int">0</value>
@@ -2876,7 +2764,6 @@
     <value type="QString" key="Analyzer.QmlProfiler.LastTraceFile"></value>
     <value type="bool" key="Analyzer.QmlProfiler.Settings.UseGlobalSettings">true</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.AddedSuppressionFiles"/>
-    <value type="QString" key="Analyzer.Valgrind.Callgrind.Arguments"></value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectBusEvents">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectSystime">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.EnableBranchSim">false</value>
@@ -2887,14 +2774,12 @@
     <value type="bool" key="Analyzer.Valgrind.FilterExternalIssues">true</value>
     <value type="QString" key="Analyzer.Valgrind.KCachegrindExecutable">kcachegrind</value>
     <value type="int" key="Analyzer.Valgrind.LeakCheckOnFinish">1</value>
-    <value type="QString" key="Analyzer.Valgrind.Memcheck.Arguments"></value>
     <value type="int" key="Analyzer.Valgrind.NumCallers">25</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.RemovedSuppressionFiles"/>
     <value type="int" key="Analyzer.Valgrind.SelfModifyingCodeDetection">1</value>
     <value type="bool" key="Analyzer.Valgrind.Settings.UseGlobalSettings">true</value>
     <value type="bool" key="Analyzer.Valgrind.ShowReachable">false</value>
     <value type="bool" key="Analyzer.Valgrind.TrackOrigins">true</value>
-    <value type="QString" key="Analyzer.Valgrind.ValgrindArguments"></value>
     <value type="QString" key="Analyzer.Valgrind.ValgrindExecutable">valgrind</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.VisibleErrorKinds">
      <value type="int">0</value>
@@ -2949,7 +2834,6 @@
     <value type="QString" key="Analyzer.QmlProfiler.LastTraceFile"></value>
     <value type="bool" key="Analyzer.QmlProfiler.Settings.UseGlobalSettings">true</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.AddedSuppressionFiles"/>
-    <value type="QString" key="Analyzer.Valgrind.Callgrind.Arguments"></value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectBusEvents">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectSystime">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.EnableBranchSim">false</value>
@@ -2960,14 +2844,12 @@
     <value type="bool" key="Analyzer.Valgrind.FilterExternalIssues">true</value>
     <value type="QString" key="Analyzer.Valgrind.KCachegrindExecutable">kcachegrind</value>
     <value type="int" key="Analyzer.Valgrind.LeakCheckOnFinish">1</value>
-    <value type="QString" key="Analyzer.Valgrind.Memcheck.Arguments"></value>
     <value type="int" key="Analyzer.Valgrind.NumCallers">25</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.RemovedSuppressionFiles"/>
     <value type="int" key="Analyzer.Valgrind.SelfModifyingCodeDetection">1</value>
     <value type="bool" key="Analyzer.Valgrind.Settings.UseGlobalSettings">true</value>
     <value type="bool" key="Analyzer.Valgrind.ShowReachable">false</value>
     <value type="bool" key="Analyzer.Valgrind.TrackOrigins">true</value>
-    <value type="QString" key="Analyzer.Valgrind.ValgrindArguments"></value>
     <value type="QString" key="Analyzer.Valgrind.ValgrindExecutable">valgrind</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.VisibleErrorKinds">
      <value type="int">0</value>
@@ -3022,7 +2904,6 @@
     <value type="QString" key="Analyzer.QmlProfiler.LastTraceFile"></value>
     <value type="bool" key="Analyzer.QmlProfiler.Settings.UseGlobalSettings">true</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.AddedSuppressionFiles"/>
-    <value type="QString" key="Analyzer.Valgrind.Callgrind.Arguments"></value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectBusEvents">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectSystime">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.EnableBranchSim">false</value>
@@ -3033,14 +2914,12 @@
     <value type="bool" key="Analyzer.Valgrind.FilterExternalIssues">true</value>
     <value type="QString" key="Analyzer.Valgrind.KCachegrindExecutable">kcachegrind</value>
     <value type="int" key="Analyzer.Valgrind.LeakCheckOnFinish">1</value>
-    <value type="QString" key="Analyzer.Valgrind.Memcheck.Arguments"></value>
     <value type="int" key="Analyzer.Valgrind.NumCallers">25</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.RemovedSuppressionFiles"/>
     <value type="int" key="Analyzer.Valgrind.SelfModifyingCodeDetection">1</value>
     <value type="bool" key="Analyzer.Valgrind.Settings.UseGlobalSettings">true</value>
     <value type="bool" key="Analyzer.Valgrind.ShowReachable">false</value>
     <value type="bool" key="Analyzer.Valgrind.TrackOrigins">true</value>
-    <value type="QString" key="Analyzer.Valgrind.ValgrindArguments"></value>
     <value type="QString" key="Analyzer.Valgrind.ValgrindExecutable">valgrind</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.VisibleErrorKinds">
      <value type="int">0</value>
@@ -3095,7 +2974,6 @@
     <value type="QString" key="Analyzer.QmlProfiler.LastTraceFile"></value>
     <value type="bool" key="Analyzer.QmlProfiler.Settings.UseGlobalSettings">true</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.AddedSuppressionFiles"/>
-    <value type="QString" key="Analyzer.Valgrind.Callgrind.Arguments"></value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectBusEvents">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectSystime">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.EnableBranchSim">false</value>
@@ -3106,14 +2984,12 @@
     <value type="bool" key="Analyzer.Valgrind.FilterExternalIssues">true</value>
     <value type="QString" key="Analyzer.Valgrind.KCachegrindExecutable">kcachegrind</value>
     <value type="int" key="Analyzer.Valgrind.LeakCheckOnFinish">1</value>
-    <value type="QString" key="Analyzer.Valgrind.Memcheck.Arguments"></value>
     <value type="int" key="Analyzer.Valgrind.NumCallers">25</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.RemovedSuppressionFiles"/>
     <value type="int" key="Analyzer.Valgrind.SelfModifyingCodeDetection">1</value>
     <value type="bool" key="Analyzer.Valgrind.Settings.UseGlobalSettings">true</value>
     <value type="bool" key="Analyzer.Valgrind.ShowReachable">false</value>
     <value type="bool" key="Analyzer.Valgrind.TrackOrigins">true</value>
-    <value type="QString" key="Analyzer.Valgrind.ValgrindArguments"></value>
     <value type="QString" key="Analyzer.Valgrind.ValgrindExecutable">valgrind</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.VisibleErrorKinds">
      <value type="int">0</value>
@@ -3168,7 +3044,6 @@
     <value type="QString" key="Analyzer.QmlProfiler.LastTraceFile"></value>
     <value type="bool" key="Analyzer.QmlProfiler.Settings.UseGlobalSettings">true</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.AddedSuppressionFiles"/>
-    <value type="QString" key="Analyzer.Valgrind.Callgrind.Arguments"></value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectBusEvents">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectSystime">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.EnableBranchSim">false</value>
@@ -3179,14 +3054,12 @@
     <value type="bool" key="Analyzer.Valgrind.FilterExternalIssues">true</value>
     <value type="QString" key="Analyzer.Valgrind.KCachegrindExecutable">kcachegrind</value>
     <value type="int" key="Analyzer.Valgrind.LeakCheckOnFinish">1</value>
-    <value type="QString" key="Analyzer.Valgrind.Memcheck.Arguments"></value>
     <value type="int" key="Analyzer.Valgrind.NumCallers">25</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.RemovedSuppressionFiles"/>
     <value type="int" key="Analyzer.Valgrind.SelfModifyingCodeDetection">1</value>
     <value type="bool" key="Analyzer.Valgrind.Settings.UseGlobalSettings">true</value>
     <value type="bool" key="Analyzer.Valgrind.ShowReachable">false</value>
     <value type="bool" key="Analyzer.Valgrind.TrackOrigins">true</value>
-    <value type="QString" key="Analyzer.Valgrind.ValgrindArguments"></value>
     <value type="QString" key="Analyzer.Valgrind.ValgrindExecutable">valgrind</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.VisibleErrorKinds">
      <value type="int">0</value>
@@ -3242,7 +3115,6 @@
     <value type="QString" key="Analyzer.QmlProfiler.LastTraceFile"></value>
     <value type="bool" key="Analyzer.QmlProfiler.Settings.UseGlobalSettings">true</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.AddedSuppressionFiles"/>
-    <value type="QString" key="Analyzer.Valgrind.Callgrind.Arguments"></value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectBusEvents">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectSystime">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.EnableBranchSim">false</value>
@@ -3253,14 +3125,12 @@
     <value type="bool" key="Analyzer.Valgrind.FilterExternalIssues">true</value>
     <value type="QString" key="Analyzer.Valgrind.KCachegrindExecutable">kcachegrind</value>
     <value type="int" key="Analyzer.Valgrind.LeakCheckOnFinish">1</value>
-    <value type="QString" key="Analyzer.Valgrind.Memcheck.Arguments"></value>
     <value type="int" key="Analyzer.Valgrind.NumCallers">25</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.RemovedSuppressionFiles"/>
     <value type="int" key="Analyzer.Valgrind.SelfModifyingCodeDetection">1</value>
     <value type="bool" key="Analyzer.Valgrind.Settings.UseGlobalSettings">true</value>
     <value type="bool" key="Analyzer.Valgrind.ShowReachable">false</value>
     <value type="bool" key="Analyzer.Valgrind.TrackOrigins">true</value>
-    <value type="QString" key="Analyzer.Valgrind.ValgrindArguments"></value>
     <value type="QString" key="Analyzer.Valgrind.ValgrindExecutable">valgrind</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.VisibleErrorKinds">
      <value type="int">0</value>
@@ -3316,7 +3186,6 @@
     <value type="QString" key="Analyzer.QmlProfiler.LastTraceFile"></value>
     <value type="bool" key="Analyzer.QmlProfiler.Settings.UseGlobalSettings">true</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.AddedSuppressionFiles"/>
-    <value type="QString" key="Analyzer.Valgrind.Callgrind.Arguments"></value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectBusEvents">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectSystime">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.EnableBranchSim">false</value>
@@ -3327,14 +3196,12 @@
     <value type="bool" key="Analyzer.Valgrind.FilterExternalIssues">true</value>
     <value type="QString" key="Analyzer.Valgrind.KCachegrindExecutable">kcachegrind</value>
     <value type="int" key="Analyzer.Valgrind.LeakCheckOnFinish">1</value>
-    <value type="QString" key="Analyzer.Valgrind.Memcheck.Arguments"></value>
     <value type="int" key="Analyzer.Valgrind.NumCallers">25</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.RemovedSuppressionFiles"/>
     <value type="int" key="Analyzer.Valgrind.SelfModifyingCodeDetection">1</value>
     <value type="bool" key="Analyzer.Valgrind.Settings.UseGlobalSettings">true</value>
     <value type="bool" key="Analyzer.Valgrind.ShowReachable">false</value>
     <value type="bool" key="Analyzer.Valgrind.TrackOrigins">true</value>
-    <value type="QString" key="Analyzer.Valgrind.ValgrindArguments"></value>
     <value type="QString" key="Analyzer.Valgrind.ValgrindExecutable">valgrind</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.VisibleErrorKinds">
      <value type="int">0</value>
@@ -3390,7 +3257,6 @@
     <value type="QString" key="Analyzer.QmlProfiler.LastTraceFile"></value>
     <value type="bool" key="Analyzer.QmlProfiler.Settings.UseGlobalSettings">true</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.AddedSuppressionFiles"/>
-    <value type="QString" key="Analyzer.Valgrind.Callgrind.Arguments"></value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectBusEvents">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectSystime">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.EnableBranchSim">false</value>
@@ -3401,14 +3267,12 @@
     <value type="bool" key="Analyzer.Valgrind.FilterExternalIssues">true</value>
     <value type="QString" key="Analyzer.Valgrind.KCachegrindExecutable">kcachegrind</value>
     <value type="int" key="Analyzer.Valgrind.LeakCheckOnFinish">1</value>
-    <value type="QString" key="Analyzer.Valgrind.Memcheck.Arguments"></value>
     <value type="int" key="Analyzer.Valgrind.NumCallers">25</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.RemovedSuppressionFiles"/>
     <value type="int" key="Analyzer.Valgrind.SelfModifyingCodeDetection">1</value>
     <value type="bool" key="Analyzer.Valgrind.Settings.UseGlobalSettings">true</value>
     <value type="bool" key="Analyzer.Valgrind.ShowReachable">false</value>
     <value type="bool" key="Analyzer.Valgrind.TrackOrigins">true</value>
-    <value type="QString" key="Analyzer.Valgrind.ValgrindArguments"></value>
     <value type="QString" key="Analyzer.Valgrind.ValgrindExecutable">valgrind</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.VisibleErrorKinds">
      <value type="int">0</value>
@@ -3464,7 +3328,6 @@
     <value type="QString" key="Analyzer.QmlProfiler.LastTraceFile"></value>
     <value type="bool" key="Analyzer.QmlProfiler.Settings.UseGlobalSettings">true</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.AddedSuppressionFiles"/>
-    <value type="QString" key="Analyzer.Valgrind.Callgrind.Arguments"></value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectBusEvents">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectSystime">false</value>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.EnableBranchSim">false</value>
@@ -3475,14 +3338,12 @@
     <value type="bool" key="Analyzer.Valgrind.FilterExternalIssues">true</value>
     <value type="QString" key="Analyzer.Valgrind.KCachegrindExecutable">kcachegrind</value>
     <value type="int" key="Analyzer.Valgrind.LeakCheckOnFinish">1</value>
-    <value type="QString" key="Analyzer.Valgrind.Memcheck.Arguments"></value>
     <value type="int" key="Analyzer.Valgrind.NumCallers">25</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.RemovedSuppressionFiles"/>
     <value type="int" key="Analyzer.Valgrind.SelfModifyingCodeDetection">1</value>
     <value type="bool" key="Analyzer.Valgrind.Settings.UseGlobalSettings">true</value>
     <value type="bool" key="Analyzer.Valgrind.ShowReachable">false</value>
     <value type="bool" key="Analyzer.Valgrind.TrackOrigins">true</value>
-    <value type="QString" key="Analyzer.Valgrind.ValgrindArguments"></value>
     <value type="QString" key="Analyzer.Valgrind.ValgrindExecutable">valgrind</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.VisibleErrorKinds">
      <value type="int">0</value>
@@ -3518,8 +3379,199 @@
   </valuemap>
  </data>
  <data>
+  <variable>ProjectExplorer.Project.Target.1</variable>
+  <valuemap type="QVariantMap">
+   <value type="QString" key="DeviceType">Desktop</value>
+   <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Desktop Qt 6.1.0 GCC 64bit</value>
+   <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Desktop Qt 6.1.0 GCC 64bit</value>
+   <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">qt.qt6.610.gcc_64_kit</value>
+   <value type="int" key="ProjectExplorer.Target.ActiveBuildConfiguration">0</value>
+   <value type="int" key="ProjectExplorer.Target.ActiveDeployConfiguration">0</value>
+   <value type="int" key="ProjectExplorer.Target.ActiveRunConfiguration">-1</value>
+   <valuemap type="QVariantMap" key="ProjectExplorer.Target.BuildConfiguration.0">
+    <value type="QString" key="CMake.Initial.Parameters">-GNinja
+-DCMAKE_BUILD_TYPE:String=Debug
+-DQT_QMAKE_EXECUTABLE:STRING=%{Qt:qmakeExecutable}
+-DCMAKE_PREFIX_PATH:STRING=%{Qt:QT_INSTALL_PREFIX}
+-DCMAKE_C_COMPILER:STRING=%{Compiler:Executable:C}
+-DCMAKE_CXX_COMPILER:STRING=%{Compiler:Executable:Cxx}</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">/home/anderson/repos/DEOB2/DeObfuscatorTerminal/../build-DeObfuscatorTerminal-Desktop_Qt_6_1_0_GCC_64bit-Debug</value>
+    <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
+     <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
+      <valuelist type="QVariantList" key="CMakeProjectManager.MakeStep.BuildTargets">
+       <value type="QString">all</value>
+      </valuelist>
+      <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
+      <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">CMakeProjectManager.MakeStep</value>
+     </valuemap>
+     <value type="int" key="ProjectExplorer.BuildStepList.StepsCount">1</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Build</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Build</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">ProjectExplorer.BuildSteps.Build</value>
+    </valuemap>
+    <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.1">
+     <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
+      <valuelist type="QVariantList" key="CMakeProjectManager.MakeStep.BuildTargets">
+       <value type="QString">clean</value>
+      </valuelist>
+      <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
+      <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">CMakeProjectManager.MakeStep</value>
+     </valuemap>
+     <value type="int" key="ProjectExplorer.BuildStepList.StepsCount">1</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Clean</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Clean</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">ProjectExplorer.BuildSteps.Clean</value>
+    </valuemap>
+    <value type="int" key="ProjectExplorer.BuildConfiguration.BuildStepListCount">2</value>
+    <value type="bool" key="ProjectExplorer.BuildConfiguration.ClearSystemEnvironment">false</value>
+    <valuelist type="QVariantList" key="ProjectExplorer.BuildConfiguration.CustomParsers"/>
+    <valuelist type="QVariantList" key="ProjectExplorer.BuildConfiguration.UserEnvironmentChanges"/>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Debug</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">CMakeProjectManager.CMakeBuildConfiguration</value>
+   </valuemap>
+   <valuemap type="QVariantMap" key="ProjectExplorer.Target.BuildConfiguration.1">
+    <value type="QString" key="CMake.Initial.Parameters">-GNinja
+-DCMAKE_BUILD_TYPE:String=Release
+-DQT_QMAKE_EXECUTABLE:STRING=%{Qt:qmakeExecutable}
+-DCMAKE_PREFIX_PATH:STRING=%{Qt:QT_INSTALL_PREFIX}
+-DCMAKE_C_COMPILER:STRING=%{Compiler:Executable:C}
+-DCMAKE_CXX_COMPILER:STRING=%{Compiler:Executable:Cxx}</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">/home/anderson/repos/DEOB2/DeObfuscatorTerminal/../build-DeObfuscatorTerminal-Desktop_Qt_6_1_0_GCC_64bit-Release</value>
+    <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
+     <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
+      <valuelist type="QVariantList" key="CMakeProjectManager.MakeStep.BuildTargets">
+       <value type="QString">all</value>
+      </valuelist>
+      <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
+      <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">CMakeProjectManager.MakeStep</value>
+     </valuemap>
+     <value type="int" key="ProjectExplorer.BuildStepList.StepsCount">1</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Build</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Build</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">ProjectExplorer.BuildSteps.Build</value>
+    </valuemap>
+    <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.1">
+     <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
+      <valuelist type="QVariantList" key="CMakeProjectManager.MakeStep.BuildTargets">
+       <value type="QString">clean</value>
+      </valuelist>
+      <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
+      <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">CMakeProjectManager.MakeStep</value>
+     </valuemap>
+     <value type="int" key="ProjectExplorer.BuildStepList.StepsCount">1</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Clean</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Clean</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">ProjectExplorer.BuildSteps.Clean</value>
+    </valuemap>
+    <value type="int" key="ProjectExplorer.BuildConfiguration.BuildStepListCount">2</value>
+    <value type="bool" key="ProjectExplorer.BuildConfiguration.ClearSystemEnvironment">false</value>
+    <valuelist type="QVariantList" key="ProjectExplorer.BuildConfiguration.CustomParsers"/>
+    <valuelist type="QVariantList" key="ProjectExplorer.BuildConfiguration.UserEnvironmentChanges"/>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Release</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">CMakeProjectManager.CMakeBuildConfiguration</value>
+   </valuemap>
+   <valuemap type="QVariantMap" key="ProjectExplorer.Target.BuildConfiguration.2">
+    <value type="QString" key="CMake.Initial.Parameters">-GNinja
+-DCMAKE_BUILD_TYPE:String=RelWithDebInfo
+-DQT_QMAKE_EXECUTABLE:STRING=%{Qt:qmakeExecutable}
+-DCMAKE_PREFIX_PATH:STRING=%{Qt:QT_INSTALL_PREFIX}
+-DCMAKE_C_COMPILER:STRING=%{Compiler:Executable:C}
+-DCMAKE_CXX_COMPILER:STRING=%{Compiler:Executable:Cxx}</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">/home/anderson/repos/DEOB2/DeObfuscatorTerminal/../build-DeObfuscatorTerminal-Desktop_Qt_6_1_0_GCC_64bit-RelWithDebInfo</value>
+    <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
+     <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
+      <valuelist type="QVariantList" key="CMakeProjectManager.MakeStep.BuildTargets">
+       <value type="QString">all</value>
+      </valuelist>
+      <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
+      <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">CMakeProjectManager.MakeStep</value>
+     </valuemap>
+     <value type="int" key="ProjectExplorer.BuildStepList.StepsCount">1</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Build</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Build</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">ProjectExplorer.BuildSteps.Build</value>
+    </valuemap>
+    <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.1">
+     <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
+      <valuelist type="QVariantList" key="CMakeProjectManager.MakeStep.BuildTargets">
+       <value type="QString">clean</value>
+      </valuelist>
+      <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
+      <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">CMakeProjectManager.MakeStep</value>
+     </valuemap>
+     <value type="int" key="ProjectExplorer.BuildStepList.StepsCount">1</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Clean</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Clean</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">ProjectExplorer.BuildSteps.Clean</value>
+    </valuemap>
+    <value type="int" key="ProjectExplorer.BuildConfiguration.BuildStepListCount">2</value>
+    <value type="bool" key="ProjectExplorer.BuildConfiguration.ClearSystemEnvironment">false</value>
+    <valuelist type="QVariantList" key="ProjectExplorer.BuildConfiguration.CustomParsers"/>
+    <valuelist type="QVariantList" key="ProjectExplorer.BuildConfiguration.UserEnvironmentChanges"/>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Release with Debug Information</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">CMakeProjectManager.CMakeBuildConfiguration</value>
+   </valuemap>
+   <valuemap type="QVariantMap" key="ProjectExplorer.Target.BuildConfiguration.3">
+    <value type="QString" key="CMake.Initial.Parameters">-GNinja
+-DCMAKE_BUILD_TYPE:String=MinSizeRel
+-DQT_QMAKE_EXECUTABLE:STRING=%{Qt:qmakeExecutable}
+-DCMAKE_PREFIX_PATH:STRING=%{Qt:QT_INSTALL_PREFIX}
+-DCMAKE_C_COMPILER:STRING=%{Compiler:Executable:C}
+-DCMAKE_CXX_COMPILER:STRING=%{Compiler:Executable:Cxx}</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">/home/anderson/repos/DEOB2/DeObfuscatorTerminal/../build-DeObfuscatorTerminal-Desktop_Qt_6_1_0_GCC_64bit-MinSizeRel</value>
+    <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
+     <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
+      <valuelist type="QVariantList" key="CMakeProjectManager.MakeStep.BuildTargets">
+       <value type="QString">all</value>
+      </valuelist>
+      <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
+      <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">CMakeProjectManager.MakeStep</value>
+     </valuemap>
+     <value type="int" key="ProjectExplorer.BuildStepList.StepsCount">1</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Build</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Build</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">ProjectExplorer.BuildSteps.Build</value>
+    </valuemap>
+    <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.1">
+     <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
+      <valuelist type="QVariantList" key="CMakeProjectManager.MakeStep.BuildTargets">
+       <value type="QString">clean</value>
+      </valuelist>
+      <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
+      <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">CMakeProjectManager.MakeStep</value>
+     </valuemap>
+     <value type="int" key="ProjectExplorer.BuildStepList.StepsCount">1</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Clean</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Clean</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">ProjectExplorer.BuildSteps.Clean</value>
+    </valuemap>
+    <value type="int" key="ProjectExplorer.BuildConfiguration.BuildStepListCount">2</value>
+    <value type="bool" key="ProjectExplorer.BuildConfiguration.ClearSystemEnvironment">false</value>
+    <valuelist type="QVariantList" key="ProjectExplorer.BuildConfiguration.CustomParsers"/>
+    <valuelist type="QVariantList" key="ProjectExplorer.BuildConfiguration.UserEnvironmentChanges"/>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Minimum Size Release</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">CMakeProjectManager.CMakeBuildConfiguration</value>
+   </valuemap>
+   <value type="int" key="ProjectExplorer.Target.BuildConfigurationCount">4</value>
+   <valuemap type="QVariantMap" key="ProjectExplorer.Target.DeployConfiguration.0">
+    <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
+     <value type="int" key="ProjectExplorer.BuildStepList.StepsCount">0</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Deploy</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Deploy</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">ProjectExplorer.BuildSteps.Deploy</value>
+    </valuemap>
+    <value type="int" key="ProjectExplorer.BuildConfiguration.BuildStepListCount">1</value>
+    <valuemap type="QVariantMap" key="ProjectExplorer.DeployConfiguration.CustomData"/>
+    <value type="bool" key="ProjectExplorer.DeployConfiguration.CustomDataEnabled">false</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">ProjectExplorer.DefaultDeployConfiguration</value>
+   </valuemap>
+   <value type="int" key="ProjectExplorer.Target.DeployConfigurationCount">1</value>
+   <value type="int" key="ProjectExplorer.Target.RunConfigurationCount">0</value>
+  </valuemap>
+ </data>
+ <data>
   <variable>ProjectExplorer.Project.TargetCount</variable>
-  <value type="int">1</value>
+  <value type="int">2</value>
  </data>
  <data>
   <variable>ProjectExplorer.Project.Updater.FileVersion</variable>
