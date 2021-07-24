@@ -2,6 +2,17 @@
 
 XMLSaveState::XMLSaveState(QObject *parent) : QObject(parent)
 {
+    defaultLogic = [](QWidget *widget){
+        QHash<QString, QString> result;
+
+        result["posX"] = widget->x();
+        result["posY"] = widget->y();
+
+        result["widget"] = widget->width();
+        result["height"] = widget->height();
+
+        return result;
+    };
     setLogic(Logic::NoLogic);
     setSaveInterval();
 }
@@ -38,17 +49,32 @@ void XMLSaveState::setSaveInterval(int msecs)
     this->m_intervalMsecs = msecs;
 }
 
-void XMLSaveState::setMdiSubwindows(QList<QMLMdiSubWindow*> subwindows)
+QWidget *XMLSaveState::addWidgetsToSave(QWidget *widget, std::function<QHash<QString, QString> (QWidget *)> saveLogic)
 {
+    if(!this->m_widgetsAndLogics.contains(widget)){
+        this->m_widgetsAndLogics[widget] = saveLogic;
+        return widget;
+    }
 
+    return nullptr;
 }
 
-void XMLSaveState::setQMLsubwindows(QList<QMLWindow *> subwindows)
+QMLMdiSubWindow *XMLSaveState::addWidgetsToSave(QMLMdiSubWindow *qmlSubWindows, std::function<QHash<QString, QString> (QMLMdiSubWindow *)> saveLogic)
 {
+    if(!this->m_qmlSubWindowsAndLogics.contains(qmlSubWindows)){
+        this->m_qmlSubWindowsAndLogics[qmlSubWindows] = saveLogic;
+        return qmlSubWindows;
+    }
 
+    return nullptr;
 }
 
 void XMLSaveState::onShortcutExecuted(const QKeySequence &shortcutKeys)
+{
+
+}
+
+void XMLSaveState::saveState()
 {
 
 }

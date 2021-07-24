@@ -5,12 +5,10 @@
 #include <QDateTime>
 #include <QTimer>
 #include <QKeySequence>
-#include <QList>
+#include <QHash>
 #include <QXmlStreamReader>
 #include <QXmlStreamReader>
 #include "subwindows/qmlmdisubwindow.h"
-
-
 
 class XMLSaveState : public QObject
 {
@@ -26,8 +24,8 @@ public:
     void setLogic(Logic logic);
     void setSaveInterval(int msecs = 5000);
 
-    void setMdiSubwindows(QList<QMLMdiSubWindow*> subwindows);
-    void setQMLsubwindows(QList<QMLWindow*> subwindows);
+    QWidget *addWidgetsToSave(QWidget *widget, std::function<QHash<QString, QString>(QWidget*)> saveLogic);
+    QMLMdiSubWindow *addWidgetsToSave(QMLMdiSubWindow *qmlSubWindows, std::function<QHash<QString, QString>(QMLMdiSubWindow*)> saveLogic);
 
 public slots:
     void onShortcutExecuted(const QKeySequence& shortcutKeys);
@@ -38,10 +36,16 @@ private slots:
 signals:
     void saved(QDateTime lastSave);
 
+
 private:
     Logic m_logic;
     QTimer * m_timer;
     int m_intervalMsecs;
+    QHash<QWidget*, std::function<QHash<QString, QString>(QWidget*)>> m_widgetsAndLogics;
+    QHash<QMLMdiSubWindow*, std::function<QHash<QString, QString>(QMLMdiSubWindow*)>> m_qmlSubWindowsAndLogics;
+    std::function<QHash<QString, QString>(QWidget*)> defaultLogic;
 };
+
+
 
 #endif // XMLSAVESTATE_H
