@@ -19,3 +19,8 @@ DebuggerMain::~DebuggerMain()
 {
 
 }
+
+QString DebuggerMain::whoIAm()
+{
+    return "DebuggerMain";
+}

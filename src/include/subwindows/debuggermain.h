@@ -13,6 +13,8 @@ class DebuggerMain : public QMLMdiSubWindow
 public:
     explicit DebuggerMain(QWidget *parent = nullptr);
     ~DebuggerMain();
+
+    QString whoIAm() override;
 };
 
 #endif // DEBUGGERMAIN_H

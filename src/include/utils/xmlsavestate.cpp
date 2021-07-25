@@ -1,29 +1,28 @@
 #include "xmlsavestate.h"
 
-XMLSaveState::XMLSaveState(QObject *parent) : QObject(parent)
+xml::XMLSaveState *xml::XMLSaveState::m_instance = nullptr;
+
+xml::XMLSaveState::XMLSaveState(QObject *parent) : QObject(parent)
 {
-    defaultLogic = [](QWidget *widget){
-        QHash<QString, QString> result;
-
-        result["posX"] = widget->x();
-        result["posY"] = widget->y();
-
-        result["widget"] = widget->width();
-        result["height"] = widget->height();
-
-        return result;
-    };
     setLogic(Logic::NoLogic);
     setSaveInterval();
 }
 
-XMLSaveState::~XMLSaveState()
+xml::XMLSaveState::~XMLSaveState()
 {
     if(this->m_timer != nullptr)
         delete m_timer;
 }
 
-void XMLSaveState::setLogic(XMLSaveState::Logic logic)
+xml::XMLSaveState *xml::XMLSaveState::instance()
+{
+    if(xml::XMLSaveState::m_instance == nullptr){
+        xml::XMLSaveState::m_instance = new XMLSaveState();
+    }
+    return xml::XMLSaveState::m_instance;
+}
+
+void xml::XMLSaveState::setLogic(XMLSaveState::Logic logic)
 {
     this->m_logic = logic;
     switch (this->m_logic) {
@@ -44,22 +43,17 @@ void XMLSaveState::setLogic(XMLSaveState::Logic logic)
     }
 }
 
-void XMLSaveState::setSaveInterval(int msecs)
+void xml::XMLSaveState::setQMdiArea(QMdiArea *mdiArea)
+{
+    this->m_mdiArea = mdiArea;
+}
+
+void xml::XMLSaveState::setSaveInterval(int msecs)
 {
     this->m_intervalMsecs = msecs;
 }
 
-QWidget *XMLSaveState::addWidgetsToSave(QWidget *widget, std::function<QHash<QString, QString> (QWidget *)> saveLogic)
-{
-    if(!this->m_widgetsAndLogics.contains(widget)){
-        this->m_widgetsAndLogics[widget] = saveLogic;
-        return widget;
-    }
-
-    return nullptr;
-}
-
-QMLMdiSubWindow *XMLSaveState::addWidgetsToSave(QMLMdiSubWindow *qmlSubWindows, std::function<QHash<QString, QString> (QMLMdiSubWindow *)> saveLogic)
+QMLMdiSubWindow *xml::XMLSaveState::addWidgetsToSave(QMLMdiSubWindow *qmlSubWindows, std::function<QHash<QString, QString> (QMLMdiSubWindow *)> saveLogic)
 {
     if(!this->m_qmlSubWindowsAndLogics.contains(qmlSubWindows)){
         this->m_qmlSubWindowsAndLogics[qmlSubWindows] = saveLogic;
@@ -69,12 +63,35 @@ QMLMdiSubWindow *XMLSaveState::addWidgetsToSave(QMLMdiSubWindow *qmlSubWindows, 
     return nullptr;
 }
 
-void XMLSaveState::onShortcutExecuted(const QKeySequence &shortcutKeys)
+void xml::XMLSaveState::onShortcutExecuted(const QKeySequence &shortcutKeys)
 {
 
 }
 
-void XMLSaveState::saveState()
+void xml::XMLSaveState::saveState()
 {
+    //TODO: use of Threads
+    QFile file("XMLSaveStates.xml");
+    if (!file.open(QIODevice::WriteOnly | QIODevice::Text))
+        return; //TODO: throw exception or other logic
 
+    QXmlStreamWriter xmlWriter(&file);
+    xmlWriter.setAutoFormatting(true);
+    xmlWriter.writeStartDocument();
+
+    for(auto it = this->m_qmlSubWindowsAndLogics.begin(); it != this->m_qmlSubWindowsAndLogics.end(); it++){
+        QHash<QString, QString> result = it.value()(it.key());
+        xmlWriter.writeStartElement("QMLSubWindows");
+            xmlWriter.writeStartElement(it.key()->whoIAm());
+                for(auto itResult = result.begin(); itResult != result.end(); itResult++){
+                    //TODO: implementar possibilidade do caller adicionar elementos com base na key com padrões
+                    xmlWriter.writeAttribute(itResult.key(), itResult.value());
+                }
+            xmlWriter.writeEndElement();
+        xmlWriter.writeEndElement();
+    }
+
+    xmlWriter.writeEndDocument();
+    file.flush();
+    file.close();
 }

@@ -17,6 +17,8 @@ public:
     void closeEvent(QCloseEvent *event);
     //Virtuals end
 
+    QUrl source();
+
 protected:
     void setQMLSourceUrl(const QUrl& url);
     QQuickView *view();

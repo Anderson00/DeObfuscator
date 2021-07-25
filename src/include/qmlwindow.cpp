@@ -63,6 +63,11 @@ void QMLWindow::closeEvent(QCloseEvent *event)
     QMainWindow::closeEvent(event);
 }
 
+QUrl QMLWindow::source()
+{
+    return this->m_view->source();
+}
+
 void QMLWindow::setQMLSourceUrl(const QUrl &url)
 {
     this->m_view->setSource(url);

@@ -1,16 +1,18 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
 
-#include "subwindows/programheader.h"
-#include "subwindows/debuggermain.h"
-#include "utils.h"
-#include <QMessageBox>
-#include <QDebug>
-#include <QLabel>
 #include <sstream>
 #include <iomanip>
 
 #include <QQuickView>
+#include <QMessageBox>
+#include <QDebug>
+#include <QLabel>
+
+#include "subwindows/programheader.h"
+#include "subwindows/debuggermain.h"
+#include "utils/xmlsavestate.h"
+#include "utils.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -18,13 +20,16 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    //ui->mdiArea->tileSubWindows();
     DebuggerMain *dMain = new DebuggerMain(this->ui->mdiArea);
     this->ui->mdiArea->addSubWindow(dMain);
+
+    xml::XMLSaveState::instance()->setQMdiArea(this->ui->mdiArea);
+    xml::XMLSaveState::instance()->addWidgetsToSave(dMain);
 }
 
 MainWindow::~MainWindow()
 {
+    xml::XMLSaveState::instance()->saveState();
     delete ui;
 }
 

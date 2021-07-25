@@ -16,6 +16,11 @@ public:
 
     void setPrevSaveState(std::function<void(QSettings&)> logic);
     void setPrevLoadState(std::function<void(QSettings&)> logic);
+
+    QUrl source();
+
+    virtual QString whoIAm() = 0;
+
 private slots:
     void saveState();
     void loadState();

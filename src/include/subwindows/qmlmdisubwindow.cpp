@@ -21,18 +21,17 @@ QMLMdiSubWindow::~QMLMdiSubWindow()
     delete this->m_window;
 }
 
+QUrl QMLMdiSubWindow::source()
+{
+    return this->m_window->source();
+}
+
 void QMLMdiSubWindow::saveState()
 {
-    QSettings settings("QMLMdiSubWindow", "qt");
-    settings.setValue("posX", this->pos().x());
-    settings.setValue("posY", this->pos().y());
-    settings.setValue("width", this->width());
-    settings.setValue("height", this->height());
+
 }
 
 void QMLMdiSubWindow::loadState()
 {
-    QSettings settings("QMLMdiSubWindow", "qt");
-    this->move(settings.value("posX").toInt(), settings.value("posY").toInt());
-    this->resize(settings.value("width").toInt(), settings.value("height").toInt());
+
 }
