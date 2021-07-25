@@ -14,8 +14,8 @@ public:
     explicit QMLMdiSubWindow(QWidget *parent = nullptr, const QUrl& source = QUrl(""));
     ~QMLMdiSubWindow();
 
-    void setPrevSaveState(std::function<void(QSettings&)> logic);
-    void setPrevLoadState(std::function<void(QSettings&)> logic);
+    void setSaveStateLogic(std::function<QHash<QString, QString>(QMLMdiSubWindow *)> logic);
+    void setLoadStateLogic(std::function<void(QHash<QString, QString>)> logic);
 
     QUrl source();
 
@@ -23,15 +23,18 @@ public:
 
     void closeEvent(QCloseEvent *closeEvent) override;
 
-private slots:
-    void saveState();
-    void loadState();
+public slots:
+    QHash<QString, QString> saveState();
+    void loadState(const QHash<QString, QString>& fields);
 
 signals:
     void closing();
 
 private:
     QMLWindow* m_window;
+    std::function<QHash<QString, QString>(QMLMdiSubWindow *)> m_logicSaveState;
+    std::function<void(QHash<QString, QString>)> m_logicLoadState;
+
 };
 
 #endif // QMLMDISUBWINDOW_H

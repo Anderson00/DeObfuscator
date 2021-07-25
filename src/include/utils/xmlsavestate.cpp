@@ -87,7 +87,7 @@ void xml::XMLSaveState::saveState()
 
     xmlWriter->writeStartDocument();
 
-    writeXMLQMLSubWindows(xmlWriter);
+        writeXMLQMLSubWindows(xmlWriter);
 
     xmlWriter->writeEndDocument();
 
@@ -107,8 +107,12 @@ void xml::XMLSaveState::loadState()
     }
 
     QXmlStreamReader *xmlReader = new QXmlStreamReader(file);
-    xmlReader->readNextStartElement();
-    qDebug() << xmlReader->name().toString();
+
+    while(!xmlReader->atEnd()){
+        qDebug() << xmlReader->name().toString();
+
+        xmlReader->readNext();
+    }
 
     file->flush();
     file->close();
@@ -123,6 +127,7 @@ void xml::XMLSaveState::writeXMLQMLSubWindows(QXmlStreamWriter *xmlWriter)
     for(auto it = this->m_qmlSubWindowsAndLogics.begin(); it != this->m_qmlSubWindowsAndLogics.end(); it++){
         if(it.key() != nullptr){
             QHash<QString, QString> result = it.value()(it.key());
+            result.unite(it.key()->saveState());
             xmlWriter->writeStartElement("QMLSubWindows");
                 xmlWriter->writeStartElement(it.key()->whoIAm());
                     for(auto itResult = result.begin(); itResult != result.end(); itResult++){

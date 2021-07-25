@@ -12,13 +12,23 @@ QMLMdiSubWindow::QMLMdiSubWindow(QWidget *parent, const QUrl& source) : QMdiSubW
         qDebug() << "Janela fechada";
     });
 
-    loadState();
+//    loadState();
 }
 
 QMLMdiSubWindow::~QMLMdiSubWindow()
 {
     saveState();
     delete this->m_window;
+}
+
+void QMLMdiSubWindow::setSaveStateLogic(std::function<QHash<QString, QString> (QMLMdiSubWindow *)> logic)
+{
+    this->m_logicSaveState = logic;
+}
+
+void QMLMdiSubWindow::setLoadStateLogic(std::function<void(QHash<QString, QString>)> logic)
+{
+    this->m_logicLoadState = logic;
 }
 
 QUrl QMLMdiSubWindow::source()
@@ -29,14 +39,21 @@ QUrl QMLMdiSubWindow::source()
 void QMLMdiSubWindow::closeEvent(QCloseEvent *closeEvent)
 {
     emit closing();
+    QMdiSubWindow::closeEvent(closeEvent);
 }
 
-void QMLMdiSubWindow::saveState()
+QHash<QString, QString> QMLMdiSubWindow::saveState()
 {
+    QHash<QString, QString> result;
 
+    result["test"] = "string salva";
+
+
+    return result;
 }
 
-void QMLMdiSubWindow::loadState()
+void QMLMdiSubWindow::loadState(const QHash<QString, QString>& fields)
 {
-
+    this->move(fields["posX"].toInt(), fields["posY"].toInt());
+    this->resize(fields["width"].toInt(), fields["height"].toInt());
 }
