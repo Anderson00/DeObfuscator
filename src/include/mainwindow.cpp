@@ -25,6 +25,8 @@ MainWindow::MainWindow(QWidget *parent)
 
     xml::XMLSaveState::instance()->setQMdiArea(this->ui->mdiArea);
     xml::XMLSaveState::instance()->addWidgetsToSave(dMain);
+
+    xml::XMLSaveState::instance()->loadState();
 }
 
 MainWindow::~MainWindow()

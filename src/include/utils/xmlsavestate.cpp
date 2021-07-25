@@ -6,6 +6,7 @@ xml::XMLSaveState::XMLSaveState(QObject *parent) : QObject(parent)
 {
     setLogic(Logic::NoLogic);
     setSaveInterval();
+
 }
 
 xml::XMLSaveState::~XMLSaveState()
@@ -57,6 +58,9 @@ QMLMdiSubWindow *xml::XMLSaveState::addWidgetsToSave(QMLMdiSubWindow *qmlSubWind
 {
     if(!this->m_qmlSubWindowsAndLogics.contains(qmlSubWindows)){
         this->m_qmlSubWindowsAndLogics[qmlSubWindows] = saveLogic;
+        QObject::connect(qmlSubWindows, &QMLMdiSubWindow::closing, [=](){
+            this->m_qmlSubWindowsAndLogics.remove(qmlSubWindows);
+        });
         return qmlSubWindows;
     }
 
@@ -71,27 +75,62 @@ void xml::XMLSaveState::onShortcutExecuted(const QKeySequence &shortcutKeys)
 void xml::XMLSaveState::saveState()
 {
     //TODO: use of Threads
-    QFile file("XMLSaveStates.xml");
-    if (!file.open(QIODevice::WriteOnly | QIODevice::Text))
-        return; //TODO: throw exception or other logic
+    QFile * file = new QFile("XMLSaveStates.xml");
 
-    QXmlStreamWriter xmlWriter(&file);
-    xmlWriter.setAutoFormatting(true);
-    xmlWriter.writeStartDocument();
-
-    for(auto it = this->m_qmlSubWindowsAndLogics.begin(); it != this->m_qmlSubWindowsAndLogics.end(); it++){
-        QHash<QString, QString> result = it.value()(it.key());
-        xmlWriter.writeStartElement("QMLSubWindows");
-            xmlWriter.writeStartElement(it.key()->whoIAm());
-                for(auto itResult = result.begin(); itResult != result.end(); itResult++){
-                    //TODO: implementar possibilidade do caller adicionar elementos com base na key com padrões
-                    xmlWriter.writeAttribute(itResult.key(), itResult.value());
-                }
-            xmlWriter.writeEndElement();
-        xmlWriter.writeEndElement();
+    if (!file->open(QIODevice::WriteOnly | QIODevice::Text)){
+        //TODO: throw exception or other logic
+        qDebug() << "File not Open";
     }
 
-    xmlWriter.writeEndDocument();
-    file.flush();
-    file.close();
+    QXmlStreamWriter *xmlWriter = new QXmlStreamWriter(file);
+    xmlWriter->setAutoFormatting(true);
+
+    xmlWriter->writeStartDocument();
+
+    writeXMLQMLSubWindows(xmlWriter);
+
+    xmlWriter->writeEndDocument();
+
+    file->flush();
+    file->close();
+    delete xmlWriter;
+    delete file;
+}
+
+void xml::XMLSaveState::loadState()
+{
+    QFile * file = new QFile("XMLSaveStates.xml");
+
+    if (!file->open(QIODevice::ReadOnly)){
+        //TODO: throw exception or other logic
+        qDebug() << "File not open";
+    }
+
+    QXmlStreamReader *xmlReader = new QXmlStreamReader(file);
+    xmlReader->readNextStartElement();
+    qDebug() << xmlReader->name().toString();
+
+    file->flush();
+    file->close();
+    delete xmlReader;
+    delete file;
+
+}
+
+void xml::XMLSaveState::writeXMLQMLSubWindows(QXmlStreamWriter *xmlWriter)
+{
+    qDebug() << this->m_qmlSubWindowsAndLogics.size();
+    for(auto it = this->m_qmlSubWindowsAndLogics.begin(); it != this->m_qmlSubWindowsAndLogics.end(); it++){
+        if(it.key() != nullptr){
+            QHash<QString, QString> result = it.value()(it.key());
+            xmlWriter->writeStartElement("QMLSubWindows");
+                xmlWriter->writeStartElement(it.key()->whoIAm());
+                    for(auto itResult = result.begin(); itResult != result.end(); itResult++){
+                        //TODO: implementar possibilidade do caller adicionar elementos com base na key com padrões
+                        xmlWriter->writeAttribute(itResult.key(), itResult.value());
+                    }
+                xmlWriter->writeEndElement();
+            xmlWriter->writeEndElement();
+        }
+    }
 }

@@ -46,14 +46,17 @@ public:
 
     QMLMdiSubWindow *addWidgetsToSave(QMLMdiSubWindow *qmlSubWindows, std::function<QHash<QString, QString>(QMLMdiSubWindow*)> saveLogic = defaultLogicToSaveQMLMdiSubWindows);
 
-
 public slots:
     void onShortcutExecuted(const QKeySequence& shortcutKeys);
     void saveState();
+    void loadState();
+
+private slots:
+    void writeXMLQMLSubWindows(QXmlStreamWriter *xmlWriter);
 
 signals:
     void saved(QDateTime lastSave);
-
+    void loaded();
 
 private:
     static XMLSaveState *m_instance;
@@ -62,6 +65,7 @@ private:
     QTimer * m_timer;
     QMdiArea *m_mdiArea;
     int m_intervalMsecs;
+
     QHash<QWidget*, std::function<QHash<QString, QString>(QWidget*)>> m_widgetsAndLogics;
     QHash<QMLMdiSubWindow*, std::function<QHash<QString, QString>(QMLMdiSubWindow*)>> m_qmlSubWindowsAndLogics;
 };

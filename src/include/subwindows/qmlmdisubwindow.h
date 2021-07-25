@@ -21,9 +21,14 @@ public:
 
     virtual QString whoIAm() = 0;
 
+    void closeEvent(QCloseEvent *closeEvent) override;
+
 private slots:
     void saveState();
     void loadState();
+
+signals:
+    void closing();
 
 private:
     QMLWindow* m_window;

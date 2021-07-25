@@ -26,6 +26,11 @@ QUrl QMLMdiSubWindow::source()
     return this->m_window->source();
 }
 
+void QMLMdiSubWindow::closeEvent(QCloseEvent *closeEvent)
+{
+    emit closing();
+}
+
 void QMLMdiSubWindow::saveState()
 {
 
